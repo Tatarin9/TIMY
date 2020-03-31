@@ -1,0 +1,15 @@
+.Column {
+    background-color: red;
+    width: 30%;
+    height: 80%;
+}
+
+.tmp-ticket {
+    background-color: green;
+    width: 10rem;
+    height: 5rem;
+}
+
+.ColumnTitle {
+    color: blueviolet;
+}

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+
 import Layout from './features/Layout/Layout';
+import Kanban from './features/Kanban/Kanban';
 
 class App extends Component {
   render() {
     return (
       <div>
         <Layout>
-          <p>Test</p>
+          <Kanban/>
         </Layout>
       </div>
     );

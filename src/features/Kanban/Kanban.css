@@ -1,0 +1,30 @@
+.KanbanColumnWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.Kanban {
+    margin: auto;
+
+}
+
+/* @media (min-width: 1000px) and (min-height: 700px) {
+    .Kanban {
+        width: 700px;
+        height: 600px;
+    }
+}
+
+@media (min-width: 500px) and (min-height: 401px) {
+    .Kanban {
+        width: 450px;
+        height: 400px;
+    }
+}
+@media (min-width: 500px) and (min-height: 400px) {
+    .Kanban {
+        width: 350px;
+        height: 300px;
+    }
+} */
