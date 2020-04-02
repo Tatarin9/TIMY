@@ -3,13 +3,18 @@ import React from 'react';
 import Aux from '../../../shared/Aux';
 import classes from './Column.css';
 
+import KanbanTicket from '../Ticket/Ticket';
+
 const kanbanColumn = (props) => {
 
     const columnTitle = (<div className={classes.ColumnTitle}>{props.title}</div>);
     const columnTickets = (
         <div className={classes.Column}>
             {props.projects.map((project, index) => {
-                return <div key={project.id}>{project.name}</div>
+                return <KanbanTicket
+                    key={project.id}
+                    projectName={project.name}
+                />
             })
             }
         </div>);
@@ -21,7 +26,6 @@ const kanbanColumn = (props) => {
                 {columnTitle}
                 {columnTickets}
             </div>
-
         </Aux>
     );
 

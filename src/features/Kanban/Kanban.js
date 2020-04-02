@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import Aux from '../../shared/Aux';
 import KanbanColumn from './Column/Column';
@@ -17,22 +17,26 @@ class Kanban extends Component {
 
     state = {
         columns: [
-            { id: 1, title: 'Proposal', status: 'proposal' },
-            { id: 2, title: 'Pending approval', status: 'pending-approval' },
-            { id: 3, title: 'In progress', status: 'in-progress' },
-            { id: 4, title: 'Completed', status: 'completed' },
-            { id: 5, title: 'Archived', status: 'archived' }
+            {id: 1, title: 'Proposal', status: 'proposal'},
+            {id: 2, title: 'Pending approval', status: 'pending-approval'},
+            {id: 3, title: 'In progress', status: 'in-progress'},
+            {id: 4, title: 'Completed', status: 'completed'},
+            {id: 5, title: 'Archived', status: 'archived'}
         ],
         projects: [
-            { id: 1, name: 'project 1', status: 'proposal' },
-            { id: 1, name: 'project 2', status: 'pending-approval' },
-            { id: 1, name: 'project 3', status: 'in-progress' },
-            { id: 1, name: 'project 4', status: 'completed' },
-            { id: 1, name: 'project 5', status: 'archived' },
+            {id: 1, name: 'project 1', status: 'proposal'},
+            {id: 1, name: 'project 2', status: 'pending-approval'},
+            {id: 1, name: 'project 3', status: 'in-progress'},
+            {id: 1, name: 'project 4', status: 'completed'},
+            {id: 1, name: 'project 5', status: 'archived'},
 
         ],
-        otherState: 'some other value',
-    }
+        otherState: 'some other value'
+    };
+
+    addProjectHandler = () => {
+        alert('add new project form will render');
+    };
 
     render() {
 
@@ -55,10 +59,9 @@ class Kanban extends Component {
         filters = (
             <div className={appClasses.flex + ' ' + appClasses.justifyBetween}>
                 <div>Filters</div>
-                <div>Buttons</div>
+                <button onClick={this.addProjectHandler}>Add project</button>
             </div>
         );
-
 
         return (
             <Aux>

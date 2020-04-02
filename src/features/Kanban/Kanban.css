@@ -1,13 +1,16 @@
+
+.Kanban {
+    /*margin: auto;*/
+    width: 100%;
+    overflow: auto;
+}
+
 .KanbanColumnWrapper {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     height: 100%;
 }
 
-.Kanban {
-    margin: auto;
-
-}
 
 /* @media (min-width: 1000px) and (min-height: 700px) {
     .Kanban {
