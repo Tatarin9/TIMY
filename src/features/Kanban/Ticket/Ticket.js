@@ -1,21 +1,10 @@
 import React from 'react';
 
 import classes from './Ticket.css';
-import Modal from '../../../shared/Modal/Modal';
 import Aux from '../../../shared/Aux';
+import Button from '../../../shared/Button/Button';
 
 const kanbanTicket = (props) => {
-    let showModal = false;
-    let modal = null;
-
-
-    const showModalClicked = () => {
-        debugger
-        showModal = !showModal;
-        if (showModal) {
-            modal = <Modal/>;
-        }
-    };
 
     return (
         <Aux>
@@ -24,12 +13,8 @@ const kanbanTicket = (props) => {
                 <div>
                     Project details
                 </div>
-                <button onClick={showModalClicked}>Show Modal</button>
+                <Button btnType="Danger" click="" clicked={props.currentTicket}>Show Modal</Button>
             </div>
-            <Modal>
-                <h1>Want to archive that?</h1>
-                <div>{props.projectName}</div>
-            </Modal>
         </Aux>
     );
 

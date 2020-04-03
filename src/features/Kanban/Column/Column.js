@@ -14,6 +14,7 @@ const kanbanColumn = (props) => {
                 return <KanbanTicket
                     key={project.id}
                     projectName={project.name}
+                    currentTicket={() => props.ticketClicked(project)}
                 />
             })
             }

@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cc650fb-a41b-4b27-a6df-8cb1e7e0749b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/shared/Modal/Modal.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/Modal/Modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/Backdrop/Backdrop.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/Backdrop/Backdrop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/Button/Button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/Button/Button.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Column/Column.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Column/Column.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Modal/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Modal/Modal.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +41,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../timy-angular" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/shared" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -50,6 +49,12 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/shared" />
+      <recent name="$PROJECT_DIR$/src/shared/Backdrop" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Tests (timy)" type="JavaScriptTestRunnerKarma">
@@ -93,7 +98,7 @@
       <updated>1584370721093</updated>
       <workItem from="1584370730264" duration="603000" />
       <workItem from="1585690049537" duration="665000" />
-      <workItem from="1585847633090" duration="7469000" />
+      <workItem from="1585847633090" duration="16222000" />
     </task>
     <task id="LOCAL-00001" summary="switch to webstorm">
       <created>1585690261567</created>
@@ -102,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585690261567</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add modal, some styles">
+      <created>1585865184917</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585865184917</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,13 +122,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="switch to webstorm" />
-    <option name="LAST_COMMIT_MESSAGE" value="switch to webstorm" />
+    <MESSAGE value="add modal, some styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="add modal, some styles" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="558" y="113" width="860" height="851" key="CommitChangelistDialog2" timestamp="1585690261477">
+    <state x="558" y="113" width="860" height="851" key="CommitChangelistDialog2" timestamp="1585865184717">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="558" y="113" width="860" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1585690261477" />
+    <state x="558" y="113" width="860" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1585865184717" />
     <state x="247" y="162" width="1407" height="728" key="DiffContextDialog" timestamp="1585847656690">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -126,14 +139,18 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1585849251607" />
+    <state x="832" y="232" width="312" height="614" key="RollbackChangesDialog" timestamp="1585904975174">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="832" y="232" width="312" height="614" key="RollbackChangesDialog/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1585904975174" />
     <state x="482" y="174" key="SettingsEditor" timestamp="1585862227859">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="174" key="SettingsEditor/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1585862227859" />
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1585690263184">
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1585865186971">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1585690263184" />
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1585865186971" />
     <state x="653" y="332" width="670" height="413" key="git4idea.merge.GitPullDialog" timestamp="1585815452080">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

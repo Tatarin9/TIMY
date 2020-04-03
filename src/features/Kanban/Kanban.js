@@ -6,6 +6,7 @@ import KanbanColumn from './Column/Column';
 // import '../../App.css';
 import appClasses from '../../App.css';
 import classes from './Kanban.css';
+import Modal from '../../shared/Modal/Modal';
 
 class Kanban extends Component {
 
@@ -31,11 +32,22 @@ class Kanban extends Component {
             {id: 1, name: 'project 5', status: 'archived'},
 
         ],
+        isTicketClicked: false,
+        currentTicket: null,
         otherState: 'some other value'
     };
 
     addProjectHandler = () => {
         alert('add new project form will render');
+    };
+
+    clickTicketHandler = (ticket) => {
+        debugger
+        this.setState({isTicketClicked: true, currentTicket: ticket});
+    };
+
+    cancelModalHandler = () => {
+        this.setState({isTicketClicked: false});
     };
 
     render() {
@@ -48,6 +60,7 @@ class Kanban extends Component {
                     return <KanbanColumn
                         title={column.title}
                         projects={this.state.projects.filter(project => project.status === column.status)}
+                        ticketClicked={(ticket) => this.clickTicketHandler(ticket)}
                         key={column.id}
                     />
                 })}
@@ -69,6 +82,10 @@ class Kanban extends Component {
                 <div className={classes.Kanban}>
                     {columns}
                 </div>
+                <Modal show={this.state.isTicketClicked} modalClosed={this.cancelModalHandler}>
+                    <p>ticket clicked</p>
+                    <p>{this.state.currentTicket ? this.state.currentTicket.name : null}</p>
+                </Modal>
             </Aux>
         );
     }
