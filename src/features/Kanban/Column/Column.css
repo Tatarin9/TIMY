@@ -1,14 +1,9 @@
 .Column {
+    display: inline-block;
     width: 200px;
     margin: 0 0.5rem;
     min-height: 90vh;
     border: solid 1px darkslategrey;
-}
-
-.tmp-ticket {
-    background-color: green;
-    width: 10rem;
-    height: 5rem;
 }
 
 .ColumnTitle {

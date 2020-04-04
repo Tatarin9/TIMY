@@ -42,7 +42,6 @@ class Kanban extends Component {
     };
 
     clickTicketHandler = (ticket) => {
-        debugger
         this.setState({isTicketClicked: true, currentTicket: ticket});
     };
 
@@ -54,18 +53,15 @@ class Kanban extends Component {
 
         let columns = null;
 
-        columns = (
-            <div className={classes.KanbanColumnWrapper}>
-                {this.state.columns.map((column, index) => {
-                    return <KanbanColumn
-                        title={column.title}
-                        projects={this.state.projects.filter(project => project.status === column.status)}
-                        ticketClicked={(ticket) => this.clickTicketHandler(ticket)}
-                        key={column.id}
-                    />
-                })}
-            </div>
-        );
+        columns = this.state.columns.map((column, index) => {
+            return <KanbanColumn
+                title={column.title}
+                projects={this.state.projects.filter(project => project.status === column.status)}
+                ticketClicked={(ticket) => this.clickTicketHandler(ticket)}
+                key={column.id}
+            />
+        })
+        ;
 
         let filters = null;
 

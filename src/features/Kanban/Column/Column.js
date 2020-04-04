@@ -8,22 +8,19 @@ import KanbanTicket from '../Ticket/Ticket';
 const kanbanColumn = (props) => {
 
     const columnTitle = (<div className={classes.ColumnTitle}>{props.title}</div>);
-    const columnTickets = (
-        <div className={classes.Column}>
-            {props.projects.map((project, index) => {
-                return <KanbanTicket
-                    key={project.id}
-                    projectName={project.name}
-                    currentTicket={() => props.ticketClicked(project)}
-                />
-            })
-            }
-        </div>);
+    const columnTickets =
+        props.projects.map((project, index) => {
+            return <KanbanTicket
+                key={project.id}
+                projectName={project.name}
+                currentTicket={() => props.ticketClicked(project)}
+            />
+        });
 
 
     return (
         <Aux>
-            <div>
+            <div className={classes.Column}>
                 {columnTitle}
                 {columnTickets}
             </div>

@@ -3,13 +3,17 @@
     /*margin: auto;*/
     width: 100%;
     overflow: auto;
+    /*overflow-x:scroll;*/
+    white-space: nowrap;
+    position: relative;
+    text-align: center;
 }
 
-.KanbanColumnWrapper {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-}
+/*.KanbanColumnWrapper {*/
+/*    !*display: flex;*!*/
+/*    !*justify-content: center;*!*/
+/*    height: 100%;*/
+/*}*/
 
 
 /* @media (min-width: 1000px) and (min-height: 700px) {
