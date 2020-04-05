@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+// import axios from 'axios';
+import axios from '../../axios';
+
 
 import Aux from '../../shared/Aux';
 import KanbanColumn from './Column/Column';
@@ -26,16 +29,30 @@ class Kanban extends Component {
         ],
         projects: [
             {id: 1, name: 'project 1', status: 'proposal'},
-            {id: 1, name: 'project 2', status: 'pending-approval'},
-            {id: 1, name: 'project 3', status: 'in-progress'},
-            {id: 1, name: 'project 4', status: 'completed'},
-            {id: 1, name: 'project 5', status: 'archived'},
+            {id: 2, name: 'project 2', status: 'pending-approval'},
+            {id: 3, name: 'project 3', status: 'in-progress'},
+            {id: 4, name: 'project 4', status: 'completed'},
+            {id: 5, name: 'project 5', status: 'archived'},
 
         ],
+        posts: [],
         isTicketClicked: false,
         currentTicket: null,
+        currentProject: null,
         otherState: 'some other value'
     };
+
+    componentDidMount() {
+        axios.get('https://jsonplaceholder.typicode.com/posts').then(res => {
+            console.log(res);
+            const threePosts = res.data.slice(0, 3);
+            const threePostsWithNewProperty = threePosts.map((post, index) => {
+                return {...post, newProp: 'new ' + index}
+            });
+            this.setState({posts: threePostsWithNewProperty});
+            console.log(this.state.posts);
+        });
+    }
 
     addProjectHandler = () => {
         alert('add new project form will render');
@@ -43,6 +60,19 @@ class Kanban extends Component {
 
     clickTicketHandler = (ticket) => {
         this.setState({isTicketClicked: true, currentTicket: ticket});
+        // retrieve project (POST) from backend
+        if (ticket && ticket.id) {
+            axios.get('/posts/' + ticket.id)
+                .then(res => {
+                    let currentProject = res.data;
+                    currentProject = {...currentProject, newProp: 'new edited project'}
+                    this.setState({currentProject: currentProject});
+                })
+                .catch(error => {
+                    console.log((error));
+                });
+        }
+
     };
 
     cancelModalHandler = () => {
@@ -72,6 +102,16 @@ class Kanban extends Component {
             </div>
         );
 
+        let currentProjectEdit = null;
+        if (this.state.currentProject) {
+            currentProjectEdit = (
+                <div>
+                    <p>EDITED PROJECT - TO BE CONVERTED TO ROUTED PAGE</p>
+                    <h3>Project title: {this.state.currentProject.title}</h3>
+                </div>
+            );
+        }
+
         return (
             <Aux>
                 {filters}
@@ -82,8 +122,11 @@ class Kanban extends Component {
                     <p>ticket clicked</p>
                     <p>{this.state.currentTicket ? this.state.currentTicket.name : null}</p>
                 </Modal>
+                {currentProjectEdit}
+                <h2>Relevant articles:</h2>
+                <p>State management - RxJs + hooks: https://blog.logrocket.com/rxjs-with-react-hooks-for-state-management/</p>
             </Aux>
-        );
+        )
     }
 }
 
