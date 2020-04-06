@@ -62,15 +62,27 @@ class Kanban extends Component {
         this.setState({isTicketClicked: true, currentTicket: ticket});
         // retrieve project (POST) from backend
         if (ticket && ticket.id) {
-            axios.get('/posts/' + ticket.id)
-                .then(res => {
-                    let currentProject = res.data;
-                    currentProject = {...currentProject, newProp: 'new edited project'}
-                    this.setState({currentProject: currentProject});
-                })
-                .catch(error => {
-                    console.log((error));
-                });
+
+            // axios.get('/posts/' + ticket.id)
+            //     .then(res => {
+            //         let currentProject = res.data;
+            //         currentProject = {...currentProject, newProp: 'new edited project'}
+            //         this.setState({currentProject: currentProject});
+            //     })
+            //     .catch(error => {
+            //         console.log((error));
+            //     });
+
+            const project = {
+              name: ticket.name,
+              action: 'clicked',
+              changedByUserId: 123
+            };
+
+            axios.post('/projects.json', project)
+                .then(response => console.log(response))
+                .catch(error => console.log(error));
+
         }
 
     };

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cc650fb-a41b-4b27-a6df-8cb1e7e0749b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/axios.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
@@ -100,7 +99,7 @@
       <workItem from="1585690049537" duration="665000" />
       <workItem from="1585847633090" duration="27661000" />
       <workItem from="1586027128895" duration="1793000" />
-      <workItem from="1586100531411" duration="9997000" />
+      <workItem from="1586100531411" duration="13811000" />
     </task>
     <task id="LOCAL-00001" summary="switch to webstorm">
       <created>1585690261567</created>
@@ -123,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585947227222</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add interceptors, http with axios">
+      <created>1586120144055</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1586120144055</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,13 +139,14 @@
     <MESSAGE value="switch to webstorm" />
     <MESSAGE value="add modal, some styles" />
     <MESSAGE value="logic to show clicked ticket details in modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="logic to show clicked ticket details in modal" />
+    <MESSAGE value="add interceptors, http with axios" />
+    <option name="LAST_COMMIT_MESSAGE" value="add interceptors, http with axios" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="558" y="113" width="860" height="851" key="CommitChangelistDialog2" timestamp="1586026426300">
+    <state x="558" y="113" width="860" height="851" key="CommitChangelistDialog2" timestamp="1586120143961">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="558" y="113" width="860" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586026426300" />
+    <state x="558" y="113" width="860" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586120143961" />
     <state x="247" y="162" width="1407" height="728" key="DiffContextDialog" timestamp="1586113198718">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -157,10 +164,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="174" key="SettingsEditor/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1585862227859" />
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1586026427992">
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1586120145526">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586026427992" />
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586120145526" />
     <state x="641" y="278" width="863" height="590" key="find.popup" timestamp="1586113003554">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
