@@ -1,8 +1,8 @@
 import React from 'react';
 
 import classes from './Ticket.css';
-import Aux from '../../../shared/Aux';
-import Button from '../../../shared/Button/Button';
+import Aux from '../../../shared/hoc/Aux/Aux';
+import Button from '../../../shared/UI/Button/Button';
 
 const kanbanTicket = (props) => {
 

@@ -3,13 +3,17 @@ import React, {Component} from 'react';
 import axios from '../../axios';
 
 
-import Aux from '../../shared/Aux';
+import Aux from '../../shared/hoc/Aux/Aux';
 import KanbanColumn from './Column/Column';
 
 // import '../../App.css';
 import appClasses from '../../App.css';
 import classes from './Kanban.css';
-import Modal from '../../shared/Modal/Modal';
+import Modal from '../../shared/UI/Modal/Modal';
+import Spinner from '../../shared/UI/Spinner/Spinner';
+
+import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
+import Button from '@material-ui/core/Button';
 
 class Kanban extends Component {
 
@@ -19,14 +23,16 @@ class Kanban extends Component {
     //     this.state = {...};
     // }
 
+    // columns: [
+    //     {id: 1, title: 'Proposal', status: 'proposal'},
+    //     {id: 2, title: 'Pending approval', status: 'pending-approval'},
+    //     {id: 3, title: 'In progress', status: 'in-progress'},
+    //     {id: 4, title: 'Completed', status: 'completed'},
+    //     {id: 5, title: 'Archived', status: 'archived'}
+    // ]
+
     state = {
-        columns: [
-            {id: 1, title: 'Proposal', status: 'proposal'},
-            {id: 2, title: 'Pending approval', status: 'pending-approval'},
-            {id: 3, title: 'In progress', status: 'in-progress'},
-            {id: 4, title: 'Completed', status: 'completed'},
-            {id: 5, title: 'Archived', status: 'archived'}
-        ],
+        kanbanColumns: null,
         projects: [
             {id: 1, name: 'project 1', status: 'proposal'},
             {id: 2, name: 'project 2', status: 'pending-approval'},
@@ -39,28 +45,55 @@ class Kanban extends Component {
         isTicketClicked: false,
         currentTicket: null,
         currentProject: null,
-        otherState: 'some other value'
+        otherState: 'some other value',
+        loading: false,
+        error: null
     };
 
     componentDidMount() {
-        axios.get('https://jsonplaceholder.typicode.com/posts').then(res => {
-            console.log(res);
-            const threePosts = res.data.slice(0, 3);
-            const threePostsWithNewProperty = threePosts.map((post, index) => {
-                return {...post, newProp: 'new ' + index}
+        axios.get('/demo/kanbanColumns.json')
+            .then(response => {
+                const columns = Array.isArray(response.data) ? response.data : response.data[Object.keys(response.data)];
+                this.setState({kanbanColumns: columns});
+            })
+            .catch(error => {
+                console.log(error);
+                this.setState({loading: false, error: 'error to show'});
             });
-            this.setState({posts: threePostsWithNewProperty});
-            console.log(this.state.posts);
-        });
     }
 
     addProjectHandler = () => {
         alert('add new project form will render');
     };
 
+    updateKanbanColumnsHandler = () => {
+        const columns = this.state.kanbanColumns;
+        // const columns =   [
+        //         {id: 1, title: 'Proposal', status: 'proposal'},
+        //         {id: 2, title: 'Pending approval', status: 'pending-approval'},
+        //         {id: 3, title: 'In progress', status: 'in-progress'},
+        //         {id: 4, title: 'Completed', status: 'completed'},
+        //         {id: 5, title: 'Archived', status: 'archived'}
+        //     ];
+        axios.put('/demo/kanbanColumns.json', columns)
+            .then(response => {
+                console.log(response);
+                this.setState({loading: false});
+            })
+            .catch(error => {
+                console.log(error);
+                this.setState({loading: false, error: 'error to show'});
+            });
+    }
+
     clickTicketHandler = (ticket) => {
         this.setState({isTicketClicked: true, currentTicket: ticket});
+
+
         // retrieve project (POST) from backend
+
+        this.setState({loading: true});
+
         if (ticket && ticket.id) {
 
             // axios.get('/posts/' + ticket.id)
@@ -74,36 +107,52 @@ class Kanban extends Component {
             //     });
 
             const project = {
-              name: ticket.name,
-              action: 'clicked',
-              changedByUserId: 123
+                name: ticket.name,
+                action: 'clicked',
+                changedByUserId: 123
             };
 
-            axios.post('/projects.json', project)
-                .then(response => console.log(response))
-                .catch(error => console.log(error));
-
+            setTimeout(() => {
+                axios.post('/demo/projects.json', project)
+                    .then(response => {
+                        console.log(response);
+                        this.setState({loading: false});
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        this.setState({loading: false, error: 'error to show'});
+                    });
+            }, 1500);
         }
-
     };
 
     cancelModalHandler = () => {
         this.setState({isTicketClicked: false});
     };
 
+    snackbarCloseHandler = () => {
+        alert('close snackbar');
+        this.setState({error: null});
+    };
+
+    tmpHandleClick = () => {
+        this.setState({error: 'error to show'});
+    };
+
+
     render() {
 
         let columns = null;
-
-        columns = this.state.columns.map((column, index) => {
-            return <KanbanColumn
-                title={column.title}
-                projects={this.state.projects.filter(project => project.status === column.status)}
-                ticketClicked={(ticket) => this.clickTicketHandler(ticket)}
-                key={column.id}
-            />
-        })
-        ;
+        if (this.state.kanbanColumns) {
+            columns = this.state.kanbanColumns.map((column, index) => {
+                return <KanbanColumn
+                    title={column.title}
+                    projects={this.state.projects.filter(project => project.status === column.status)}
+                    ticketClicked={(ticket) => this.clickTicketHandler(ticket)}
+                    key={column.id}
+                />
+            });
+        }
 
         let filters = null;
 
@@ -124,22 +173,54 @@ class Kanban extends Component {
             );
         }
 
+        let modalContent = (
+            <div>
+                <p>ticket clicked</p>
+                <p>{this.state.currentTicket ? this.state.currentTicket.name : null}</p>
+            </div>
+        );
+
+        if (this.state.loading) {
+            modalContent = <Spinner/>
+        }
+
+        // let snackbar = null;
+        // if (this.state.error) {
+        //     snackbar = (
+        //         <Snackbar
+        //             anchorOrigin={{
+        //                 vertical: 'bottom',
+        //                 horizontal: 'left',
+        //             }}
+        //             open={this.state.error}
+        //             autoHideDuration={6000}
+        //             onClose={this.snackbarCloseHandler}
+        //             message="error notification"
+        //         />
+        //     )
+        // }
         return (
             <Aux>
+                <Button variant="contained" color="primary"
+                        onClick={this.updateKanbanColumnsHandler}>Update kanban columns</Button>
                 {filters}
+
                 <div className={classes.Kanban}>
                     {columns}
                 </div>
                 <Modal show={this.state.isTicketClicked} modalClosed={this.cancelModalHandler}>
-                    <p>ticket clicked</p>
-                    <p>{this.state.currentTicket ? this.state.currentTicket.name : null}</p>
+                    {modalContent}
                 </Modal>
+
+
                 {currentProjectEdit}
+
                 <h2>Relevant articles:</h2>
-                <p>State management - RxJs + hooks: https://blog.logrocket.com/rxjs-with-react-hooks-for-state-management/</p>
+                <p>State management - RxJs + hooks:
+                    https://blog.logrocket.com/rxjs-with-react-hooks-for-state-management/</p>
             </Aux>
         )
     }
 }
 
-export default Kanban;
+export default withErrorHandler(Kanban, axios);

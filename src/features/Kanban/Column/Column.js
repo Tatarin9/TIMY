@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Aux from '../../../shared/Aux';
+import Aux from '../../../shared/hoc/Aux/Aux';
 import classes from './Column.css';
 
 import KanbanTicket from '../Ticket/Ticket';
