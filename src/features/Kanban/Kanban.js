@@ -14,6 +14,9 @@ import Spinner from '../../shared/UI/Spinner/Spinner';
 
 import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
 import Button from '@material-ui/core/Button';
+import Skeleton from '@material-ui/lab/Skeleton';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 
 class Kanban extends Component {
 
@@ -51,15 +54,17 @@ class Kanban extends Component {
     };
 
     componentDidMount() {
-        axios.get('/demo/kanbanColumns.json')
-            .then(response => {
-                const columns = Array.isArray(response.data) ? response.data : response.data[Object.keys(response.data)];
-                this.setState({kanbanColumns: columns});
-            })
-            .catch(error => {
-                console.log(error);
-                this.setState({loading: false, error: 'error to show'});
-            });
+        setTimeout(() => {
+            axios.get('/demo/kanbanColumns.json')
+                .then(response => {
+                    const columns = Array.isArray(response.data) ? response.data : response.data[Object.keys(response.data)];
+                    this.setState({kanbanColumns: columns});
+                })
+                .catch(error => {
+                    console.log(error);
+                    this.setState({loading: false, error: 'error to show'});
+                });
+        }, 7000);
     }
 
     addProjectHandler = () => {
@@ -89,22 +94,10 @@ class Kanban extends Component {
     clickTicketHandler = (ticket) => {
         this.setState({isTicketClicked: true, currentTicket: ticket});
 
-
         // retrieve project (POST) from backend
-
         this.setState({loading: true});
 
         if (ticket && ticket.id) {
-
-            // axios.get('/posts/' + ticket.id)
-            //     .then(res => {
-            //         let currentProject = res.data;
-            //         currentProject = {...currentProject, newProp: 'new edited project'}
-            //         this.setState({currentProject: currentProject});
-            //     })
-            //     .catch(error => {
-            //         console.log((error));
-            //     });
 
             const project = {
                 name: ticket.name,
@@ -152,6 +145,30 @@ class Kanban extends Component {
                     key={column.id}
                 />
             });
+        } else {
+            // show skeleton
+            const skeletons = [];
+            skeletons.push(
+                <Box display="flex" justifyContent="flex-start" key='box1'>
+                    <Skeleton animation="wave" variant="circle" width={40} height={40} key='0'/>
+                    <Skeleton animation="wave" height={10} width="80%" style={{ marginBottom: 20 }} key='1'/>
+                </Box>);
+
+            for (let i = 2; i < 7; i++) {
+                skeletons.push(<Skeleton animation="wave" variant="rect" style={{ height: 200, marginBottom: 20 }} key={i}/>)
+            }
+
+            const skeletonCols = [1, 2, 3, 4, 5].map((val) => {
+                return <div className={classes.SkeletonColumn} key={val}>
+                    {skeletons}
+                </div>
+            });
+
+            columns = (
+                <div className={classes.Kanban}>
+                    {skeletonCols}
+                </div>
+            );
         }
 
         let filters = null;
@@ -184,21 +201,6 @@ class Kanban extends Component {
             modalContent = <Spinner/>
         }
 
-        // let snackbar = null;
-        // if (this.state.error) {
-        //     snackbar = (
-        //         <Snackbar
-        //             anchorOrigin={{
-        //                 vertical: 'bottom',
-        //                 horizontal: 'left',
-        //             }}
-        //             open={this.state.error}
-        //             autoHideDuration={6000}
-        //             onClose={this.snackbarCloseHandler}
-        //             message="error notification"
-        //         />
-        //     )
-        // }
         return (
             <Aux>
                 <Button variant="contained" color="primary"
