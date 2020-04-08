@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cc650fb-a41b-4b27-a6df-8cb1e7e0749b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/shared/UI/Spinner/Spinner.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/UI/Spinner/Spinner.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/hoc/withErrorHandler/withErrorHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/axios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/SideDrawer/SideDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/SideDrawer/SideDrawer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Aux.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/hoc/Aux/Aux.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Backdrop/Backdrop.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/Backdrop/Backdrop.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Backdrop/Backdrop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/Backdrop/Backdrop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Button/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/Button/Button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Button/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/Button/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Modal/Modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/Modal/Modal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Modal/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/Modal/Modal.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +101,7 @@
       <workItem from="1586027128895" duration="1793000" />
       <workItem from="1586100531411" duration="16952000" />
       <workItem from="1586242003245" duration="1199000" />
-      <workItem from="1586280605928" duration="14580000" />
+      <workItem from="1586280605928" duration="15224000" />
     </task>
     <task id="LOCAL-00001" summary="switch to webstorm">
       <created>1585690261567</created>
@@ -156,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586189171358</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add material UI and update stuff">
+      <created>1586345894430</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586345894430</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,13 +157,14 @@
     <MESSAGE value="logic to show clicked ticket details in modal" />
     <MESSAGE value="add interceptors, http with axios" />
     <MESSAGE value="add firebase without auth for now" />
-    <option name="LAST_COMMIT_MESSAGE" value="add firebase without auth for now" />
+    <MESSAGE value="add material UI and update stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="add material UI and update stuff" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="558" y="113" width="860" height="851" key="CommitChangelistDialog2" timestamp="1586189171219">
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1586345894240">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="558" y="113" width="860" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586189171219" />
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586345894240" />
     <state x="247" y="162" width="1407" height="728" key="DiffContextDialog" timestamp="1586344168418">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -192,10 +182,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="174" key="SettingsEditor/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1585862227859" />
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1586189172662">
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1586345896271">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586189172662" />
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586345896271" />
     <state x="641" y="278" width="863" height="590" key="find.popup" timestamp="1586113003554">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
