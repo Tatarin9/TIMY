@@ -1,17 +1,21 @@
-import React, {Component} from 'react';
+import React, {Component, Suspense} from 'react';
 
 import Aux from '../../shared/hoc/Aux/Aux';
 import Toolbar from './Navigation/Toolbar/Toolbar';
 import SideDrawer from './Navigation/SideDrawer/SideDrawer';
 
 import classes from './Layout.css';
-import {Route, Switch} from 'react-router-dom';
+import {Redirect, Route, Switch} from 'react-router-dom';
 import Kanban from '../Kanban/Kanban';
-import Project from '../Project/Project';
+import PageNotFound from '../../shared/UI/PageNotFound/PageNotFound';
+
+// import Project from '../Project/Project';
+const Project = React.lazy(() => import('../Project/Project'));
 
 class Layout extends Component {
     state = {
-        showSideDrawer: false
+        showSideDrawer: false,
+        auth: true
     };
 
     sideDrawerClosedHandler = () => {
@@ -34,9 +38,20 @@ class Layout extends Component {
                 <main className={classes.Content}>
                     {this.props.children}
                     <Switch>
-                        <Route path="/" exact component={Kanban} />
-                        <Route path="/projects/create" exact component={Project} />
-                        <Route path="/projects/:id" exact component={Project} />
+                        <Route path="/projects" exact component={Kanban}/>
+                        <Route path="/projects/create"
+                               exact
+                               render={(props) => (<Suspense fallback={<div>Loading...</div>}><Project {...props}/></Suspense>)}
+                        />
+                        {this.state.auth ?
+                            <Route path="/projects/:id"
+                                   exact
+                                   render={(props) => (<Suspense fallback={<div>Loading...</div>}><Project {...props}/></Suspense>)}
+                            /> : null}
+
+                        <Route path="/" exact component={Kanban}/>
+                        {/*<Redirect from="/" to="/projects"/>*/}
+                        <Route component={PageNotFound}/>
                     </Switch>
                 </main>
             </Aux>
