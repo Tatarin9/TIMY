@@ -15,8 +15,9 @@ import Spinner from '../../shared/UI/Spinner/Spinner';
 import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
 import Button from '@material-ui/core/Button';
 import Skeleton from '@material-ui/lab/Skeleton';
-import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import {Route} from 'react-router-dom';
+import Project from '../Project/Project';
 
 class Kanban extends Component {
 
@@ -42,7 +43,7 @@ class Kanban extends Component {
             {id: 3, name: 'project 3', status: 'in-progress'},
             {id: 4, name: 'project 4', status: 'completed'},
             {id: 5, name: 'project 5', status: 'archived'},
-
+            {id: 5, name: 'project 5', status: 'deleted'},
         ],
         posts: [],
         isTicketClicked: false,
@@ -64,7 +65,7 @@ class Kanban extends Component {
                     console.log(error);
                     this.setState({loading: false, error: 'error to show'});
                 });
-        }, 7000);
+        }, 2500);
     }
 
     addProjectHandler = () => {
@@ -97,25 +98,27 @@ class Kanban extends Component {
         // retrieve project (POST) from backend
         this.setState({loading: true});
 
+
+
         if (ticket && ticket.id) {
-
-            const project = {
-                name: ticket.name,
-                action: 'clicked',
-                changedByUserId: 123
-            };
-
-            setTimeout(() => {
-                axios.post('/demo/projects.json', project)
-                    .then(response => {
-                        console.log(response);
-                        this.setState({loading: false});
-                    })
-                    .catch(error => {
-                        console.log(error);
-                        this.setState({loading: false, error: 'error to show'});
-                    });
-            }, 1500);
+            this.props.history.push({pathname: '/projects/' + ticket.id});
+            // const project = {
+            //     name: ticket.name,
+            //     action: 'clicked',
+            //     changedByUserId: 123
+            // };
+            //
+            // setTimeout(() => {
+            //     axios.post('/demo/projects.json', project)
+            //         .then(response => {
+            //             console.log(response);
+            //             this.setState({loading: false});
+            //         })
+            //         .catch(error => {
+            //             console.log(error);
+            //             this.setState({loading: false, error: 'error to show'});
+            //         });
+            // }, 1500);
         }
     };
 
@@ -151,11 +154,12 @@ class Kanban extends Component {
             skeletons.push(
                 <Box display="flex" justifyContent="flex-start" key='box1'>
                     <Skeleton animation="wave" variant="circle" width={40} height={40} key='0'/>
-                    <Skeleton animation="wave" height={10} width="80%" style={{ marginBottom: 20 }} key='1'/>
+                    <Skeleton animation="wave" height={10} width="80%" style={{marginBottom: 20}} key='1'/>
                 </Box>);
 
             for (let i = 2; i < 7; i++) {
-                skeletons.push(<Skeleton animation="wave" variant="rect" style={{ height: 200, marginBottom: 20 }} key={i}/>)
+                skeletons.push(<Skeleton animation="wave" variant="rect" style={{height: 200, marginBottom: 20}}
+                                         key={i}/>)
             }
 
             const skeletonCols = [1, 2, 3, 4, 5].map((val) => {
@@ -205,14 +209,19 @@ class Kanban extends Component {
             <Aux>
                 <Button variant="contained" color="primary"
                         onClick={this.updateKanbanColumnsHandler}>Update kanban columns</Button>
+
+
                 {filters}
 
                 <div className={classes.Kanban}>
                     {columns}
                 </div>
-                <Modal show={this.state.isTicketClicked} modalClosed={this.cancelModalHandler}>
-                    {modalContent}
-                </Modal>
+
+                {/*<Modal show={this.state.isTicketClicked} modalClosed={this.cancelModalHandler}>*/}
+                {/*    {modalContent}*/}
+                {/*</Modal>*/}
+
+                <Route path="/" exact component={Project} />
 
 
                 {currentProjectEdit}

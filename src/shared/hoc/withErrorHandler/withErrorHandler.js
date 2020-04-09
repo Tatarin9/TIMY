@@ -4,8 +4,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 
 const withErrorHandler = (WrappedComponent, axios) => {
     return class extends Component  {
-        // this class instance is created multiple times for each component that it wraps over,
-        // so there may be memory leaks
+
         // constructor(props) {
         //     super(props);
 
@@ -17,6 +16,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
         resInterceptor;
 
         componentWillMount() {
+            console.log('Will mount', this.reqInterceptor, this.resInterceptor);
             // clear error when request is fired
             this.reqInterceptor = axios.interceptors.request.use(request => {
                 this.setState({error: null});
@@ -28,6 +28,8 @@ const withErrorHandler = (WrappedComponent, axios) => {
             });
         }
 
+        // this class instance is created multiple times for each component that it wraps over,
+        // so there may be memory leaks to cleaned here
         componentWillUnmount() {
             // clear interceptors
             console.log('Will unmount', this.reqInterceptor, this.resInterceptor);

@@ -2,16 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cc650fb-a41b-4b27-a6df-8cb1e7e0749b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/features/Project/Project.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/Project/Project.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/hoc/withErrorHandler/withErrorHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/hoc/withErrorHandler/withErrorHandler.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,7 +50,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../timy-angular" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -105,7 +119,7 @@
       <workItem from="1586027128895" duration="1793000" />
       <workItem from="1586100531411" duration="16952000" />
       <workItem from="1586242003245" duration="1199000" />
-      <workItem from="1586280605928" duration="19083000" />
+      <workItem from="1586280605928" duration="39066000" />
     </task>
     <task id="LOCAL-00001" summary="switch to webstorm">
       <created>1585690261567</created>
@@ -163,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586351256982</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add skeleton kanban columns">
+      <created>1586355117189</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1586355117189</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,22 +197,23 @@
     <MESSAGE value="add interceptors, http with axios" />
     <MESSAGE value="add firebase without auth for now" />
     <MESSAGE value="add material UI and update stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="add material UI and update stuff" />
+    <MESSAGE value="add skeleton kanban columns" />
+    <option name="LAST_COMMIT_MESSAGE" value="add skeleton kanban columns" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1586351256920">
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1586355117106">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586351256920" />
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586355117106" />
     <state x="247" y="162" width="1407" height="728" key="DiffContextDialog" timestamp="1586351668910">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="2106" y="138" width="1457" height="746" key="DiffContextDialog/1920.0.1920.1080/67.27.1853.1053@1920.0.1920.1080" timestamp="1585690133648" />
     <state x="247" y="162" width="1407" height="728" key="DiffContextDialog/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586351668910" />
-    <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1585994127770">
+    <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1586361087122">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1585994127770" />
+    <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586361087122" />
     <state x="832" y="232" width="312" height="614" key="RollbackChangesDialog" timestamp="1585904975174">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -200,14 +222,14 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="174" key="SettingsEditor/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1585862227859" />
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1586351259153">
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1586355118525">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586351259153" />
-    <state x="641" y="278" width="863" height="590" key="find.popup" timestamp="1586352146481">
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586355118525" />
+    <state x="641" y="278" width="863" height="590" key="find.popup" timestamp="1586419015115">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="641" y="278" width="863" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586352146481" />
+    <state x="641" y="278" width="863" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586419015115" />
     <state x="653" y="332" width="670" height="413" key="git4idea.merge.GitPullDialog" timestamp="1585815452080">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
