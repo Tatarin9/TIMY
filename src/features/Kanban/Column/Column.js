@@ -12,14 +12,12 @@ const kanbanColumn = (props) => {
     const columnTickets =
         props.projects.map((project, index) => {
             return (
-                // <Link to={'/projects/' + project.id} key={project.id}>
                 <KanbanTicket
                     key={project.id}
                     projectName={project.name}
                     currentTicket={() => props.ticketClicked(project)}
                 />
             )
-            // </Link>)
         });
 
     return (

@@ -1,27 +1,40 @@
 import React, {Component} from 'react';
 import axios from '../../axios';
 
-
-import Aux from '../../shared/hoc/Aux/Aux';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 import classes from './Project.css';
-
+import Aux from '../../shared/hoc/Aux/Aux';
 import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
-import {Redirect} from 'react-router-dom';
-import Button from '@material-ui/core/Button';
 
 class Project extends Component {
 
     state = {
-        projects: null,
+        name: '',
+        customer: '',
+        dueDate: '',
+        budget: '',
+        owner: '',
         loading: false,
         submitted: false,
         error: null,
     };
 
     componentDidMount() {
-        console.log(this.props);
-        console.log('project id: ' + this.props.match.params.id);
+        const projectId = this.props.match.params.id;
+        setTimeout(() => {
+            axios.get(`/demo/projects/${projectId}.json`)
+                .then(response => {
+                    debugger
+                    console.log(response);
+                    this.setState({loading: false});
+                })
+                .catch(error => {
+                    console.log(error);
+                    this.setState({loading: false, error: 'error to show'});
+                });
+        }, 1500);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -48,29 +61,23 @@ class Project extends Component {
     }
 
     render() {
-        // let redirect = null;
-        // if (this.state.submitted) {
-        //     redirect = <Redirect to="/projects"/>
-        // }
-
         let project = null;
-
         project = (
-            <div>
+            <div className={classes.Project}>
+                <h4>Project data</h4>
                 <p>Project id is {this.props.match.params.id}</p>
-                <p>Render</p>
+                <form>
+                    <TextField id="outlined-basic" label="Customer" variant="outlined" size="small"/>
+                    <TextField id="outlined-basic" label="Due date" variant="outlined" size="small"/>
+                </form>
+                <Button variant="contained" color="primary"
+                        onClick={this.submitProjectHandler}>Submit</Button>
             </div>
         );
 
         return (
             <Aux>
-                <div>
-                    {project}
-                    <Button variant="contained" color="primary"
-                            onClick={this.submitProjectHandler}>Submit</Button>
-
-                </div>
-                {/*{redirect}*/}
+                {project}
             </Aux>
         )
     }

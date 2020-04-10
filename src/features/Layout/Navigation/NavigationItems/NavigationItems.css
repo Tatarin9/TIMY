@@ -8,11 +8,11 @@
     height: 100%;
 }
 
-.NavigationItems a:hover,
-.NavigationItems a:active,
-.NavigationItems a.active {
-    color: white;
-}
+/*.NavigationItems a:hover,*/
+/*.NavigationItems a:active,*/
+/*.NavigationItems a.active {*/
+/*    color: white;*/
+/*}*/
 
 @media (min-width: 500px) {
     .NavigationItems {

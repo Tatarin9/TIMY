@@ -35,17 +35,19 @@ class Kanban extends Component {
     //     {id: 5, title: 'Archived', status: 'archived'}
     // ]
 
+
+    // projects: [
+    //     {id: 1, name: 'project 1', status: 'proposal'},
+    //     {id: 2, name: 'project 2', status: 'pending-approval'},
+    //     {id: 3, name: 'project 3', status: 'in-progress'},
+    //     {id: 4, name: 'project 4', status: 'completed'},
+    //     {id: 5, name: 'project 5', status: 'archived'},
+    //     {id: 5, name: 'project 5', status: 'deleted'},
+    // ],
+
     state = {
-        kanbanColumns: null,
-        projects: [
-            {id: 1, name: 'project 1', status: 'proposal'},
-            {id: 2, name: 'project 2', status: 'pending-approval'},
-            {id: 3, name: 'project 3', status: 'in-progress'},
-            {id: 4, name: 'project 4', status: 'completed'},
-            {id: 5, name: 'project 5', status: 'archived'},
-            {id: 5, name: 'project 5', status: 'deleted'},
-        ],
-        posts: [],
+        kanbanColumns: [],
+        projects: [],
         isTicketClicked: false,
         currentTicket: null,
         currentProject: null,
@@ -66,6 +68,23 @@ class Kanban extends Component {
                     this.setState({loading: false, error: 'error to show'});
                 });
         }, 2500);
+
+        axios.get('/demo/projects.json')
+            .then(res => {
+                const projects = [];
+                for (let key in res.data) {
+                    projects.push({
+                        ...res.data[key],
+                        id: key
+                    })
+                }
+                this.setState({projects: projects});
+            })
+            .catch(error => {
+                console.log(error);
+                this.setState({loading: false, error: 'error to show'});
+            });
+
     }
 
     addProjectHandler = () => {
@@ -93,32 +112,23 @@ class Kanban extends Component {
     }
 
     clickTicketHandler = (ticket) => {
-        this.setState({isTicketClicked: true, currentTicket: ticket});
+        this.setState({isTicketClicked: true, currentTicket: ticket, loading: true});
 
         // retrieve project (POST) from backend
-        this.setState({loading: true});
-
-
+        // this.setState({loading: true});
 
         if (ticket && ticket.id) {
-            this.props.history.push({pathname: '/projects/' + ticket.id});
-            // const project = {
-            //     name: ticket.name,
-            //     action: 'clicked',
-            //     changedByUserId: 123
-            // };
-            //
-            // setTimeout(() => {
-            //     axios.post('/demo/projects.json', project)
-            //         .then(response => {
-            //             console.log(response);
-            //             this.setState({loading: false});
-            //         })
-            //         .catch(error => {
-            //             console.log(error);
-            //             this.setState({loading: false, error: 'error to show'});
-            //         });
-            // }, 1500);
+            // example how to build query params
+            const queryParams = [];
+            const someDummyToQuery = [1,2,3];
+            for (let i in someDummyToQuery) {
+                queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(someDummyToQuery[i]));
+            }
+            const queryString = queryParams.join('&');
+            this.props.history.push({
+                pathname: '/projects/' + ticket.id,
+                search: '?' + queryString
+            });
         }
     };
 
@@ -131,15 +141,11 @@ class Kanban extends Component {
         this.setState({error: null});
     };
 
-    tmpHandleClick = () => {
-        this.setState({error: 'error to show'});
-    };
-
 
     render() {
 
         let columns = null;
-        if (this.state.kanbanColumns) {
+        if (this.state.kanbanColumns.length > 0 && this.state.projects.length > 0) {
             columns = this.state.kanbanColumns.map((column, index) => {
                 return <KanbanColumn
                     title={column.title}
@@ -184,16 +190,6 @@ class Kanban extends Component {
             </div>
         );
 
-        let currentProjectEdit = null;
-        if (this.state.currentProject) {
-            currentProjectEdit = (
-                <div>
-                    <p>EDITED PROJECT - TO BE CONVERTED TO ROUTED PAGE</p>
-                    <h3>Project title: {this.state.currentProject.title}</h3>
-                </div>
-            );
-        }
-
         let modalContent = (
             <div>
                 <p>ticket clicked</p>
@@ -216,15 +212,6 @@ class Kanban extends Component {
                 <div className={classes.Kanban}>
                     {columns}
                 </div>
-
-                {/*<Modal show={this.state.isTicketClicked} modalClosed={this.cancelModalHandler}>*/}
-                {/*    {modalContent}*/}
-                {/*</Modal>*/}
-
-                <Route path="/" exact component={Project} />
-
-
-                {currentProjectEdit}
 
                 <h2>Relevant articles:</h2>
                 <p>State management - RxJs + hooks:

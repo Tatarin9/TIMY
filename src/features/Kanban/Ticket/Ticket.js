@@ -13,7 +13,7 @@ const kanbanTicket = (props) => {
                 <div>
                     Project details
                 </div>
-                <Button btnType="Danger" clicked={props.currentTicket}>Show Modal</Button>
+                <Button btnType="Danger" clicked={props.currentTicket}>View project</Button>
             </div>
         </Aux>
     );
