@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cc650fb-a41b-4b27-a6df-8cb1e7e0749b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/shared/Helpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/UI/Input/Input.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/UI/Input/Input.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Column/Column.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Column/Column.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItem/NavigationItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItem/NavigationItem.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItem/NavigationItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItem/NavigationItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Project/Project.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Project/Project.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Project/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Project/Project.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +43,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../timy-angular" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/shared/UI" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -62,17 +53,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/shared/hoc" />
-      <recent name="$PROJECT_DIR$/src/shared/UI/Aux" />
-      <recent name="$PROJECT_DIR$/src/shared/UI" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/shared/UI" />
       <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/features/Layout" />
       <recent name="$PROJECT_DIR$/src/features" />
       <recent name="$PROJECT_DIR$/src/shared" />
-      <recent name="$PROJECT_DIR$/src/shared/Backdrop" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/shared/hoc" />
+      <recent name="$PROJECT_DIR$/src/shared/UI/Aux" />
+      <recent name="$PROJECT_DIR$/src/shared/UI" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -122,6 +113,7 @@
       <workItem from="1586100531411" duration="16952000" />
       <workItem from="1586242003245" duration="1199000" />
       <workItem from="1586280605928" duration="60053000" />
+      <workItem from="1586601358432" duration="7781000" />
     </task>
     <task id="LOCAL-00001" summary="switch to webstorm">
       <created>1585690261567</created>
