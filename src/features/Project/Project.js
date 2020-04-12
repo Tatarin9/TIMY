@@ -10,6 +10,7 @@ import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler
 import {setFormControl, checkFromElementValidity} from '../../shared/Helpers';
 import Input from '../../shared/UI/Input/Input';
 import Button from '../../shared/UI/Button/Button';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 class Project extends Component {
 
@@ -41,22 +42,39 @@ class Project extends Component {
 
 
     componentDidMount() {
+        this.setState({loading: true});
         const projectId = this.props.match.params.id;
-        setTimeout(() => {
             axios.get(`/demo/projects/${projectId}.json`)
                 .then(response => {
                     console.log(response);
+                    this.patchFormValues(response.data);
                     this.setState({loading: false});
                 })
                 .catch(error => {
                     console.log(error);
                     this.setState({loading: false, error: 'error to show'});
                 });
-        }, 1500);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log('load data from backend by project id');
+    }
+
+    patchFormValues = (project) => {
+        const updatedProjectForm = {
+            ...this.state.projectForm
+        };
+
+        let controlIndex = -1;
+        for (let projectProperty in project) {
+            controlIndex = updatedProjectForm.controls.findIndex( (control) => control.name === projectProperty );
+            if (controlIndex > -1) {
+                updatedProjectForm.controls[controlIndex].value = project[projectProperty];
+            }
+        }
+
+        this.setState({projectForm: updatedProjectForm});
+
     }
 
     inputChangedHandler = (event, inputIdentifier) => {
@@ -131,9 +149,9 @@ class Project extends Component {
                 clicked={this.submitProjectHandler}>ORDER</Button>
             </form>
         );
-        // if ( this.state.loading ) {
-        //     form = <Spinner />;
-        // }
+        if ( this.state.loading ) {
+            form =  <CircularProgress />;
+        }
 
 
         let project = null;

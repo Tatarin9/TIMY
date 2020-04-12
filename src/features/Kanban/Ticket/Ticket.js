@@ -9,10 +9,8 @@ const kanbanTicket = (props) => {
     return (
         <Aux>
             <div className={classes.Ticket}>
+                <div>Project details</div>
                 <div>{props.projectName}</div>
-                <div>
-                    Project details
-                </div>
                 <Button btnType="Danger" clicked={props.currentTicket}>View project</Button>
             </div>
         </Aux>
