@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import axios from '../../axios';
 
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 
 import classes from './Project.css';
 import Aux from '../../shared/hoc/Aux/Aux';
 import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
 import {setFormControl, checkFromElementValidity} from '../../shared/Helpers';
 import Input from '../../shared/UI/Input/Input';
+import Button from '../../shared/UI/Button/Button';
 
 class Project extends Component {
 
@@ -44,7 +45,6 @@ class Project extends Component {
         setTimeout(() => {
             axios.get(`/demo/projects/${projectId}.json`)
                 .then(response => {
-                    debugger
                     console.log(response);
                     this.setState({loading: false});
                 })
@@ -60,7 +60,7 @@ class Project extends Component {
     }
 
     inputChangedHandler = (event, inputIdentifier) => {
-        debugger
+
         const updatedProjectForm = {
             ...this.state.projectForm
         };
@@ -85,12 +85,21 @@ class Project extends Component {
     submitProjectHandler = (event) => {
         event.preventDefault();
 
-        const project = {
-            name: 'stam',
-            action: 'clicked',
-            changedByUserId: 123,
-            status: 'completed'
+        this.setState( { loading: true } );
+
+        const updatedProjectForm = {
+            ...this.state.projectForm
         };
+
+        const formData = {};
+        updatedProjectForm.controls.forEach( control => {
+            formData[control.name] = control.value;
+        })
+
+        const project = {
+            ...formData,
+            status: 'completed'
+        }
 
         axios.post('/demo/projects.json', project)
             .then(response => {
@@ -118,7 +127,8 @@ class Project extends Component {
                         touched={formElement.touched}
                         changed={(event) => this.inputChangedHandler(event, formElement.id)} />
                 ))}
-                <Button btnType="Success" disabled={!this.state.formIsValid}>ORDER</Button>
+                <Button btnType="Success" disabled={!this.state.projectForm.valid}
+                clicked={this.submitProjectHandler}>ORDER</Button>
             </form>
         );
         // if ( this.state.loading ) {
@@ -137,9 +147,12 @@ class Project extends Component {
                     <TextField id="outlined-basic" label="Due date" variant="outlined" size="small"/>
                     <TextField id="outlined-basic" label="Owner" variant="outlined" size="small"/>
                 </form>
-                {form}
                 <Button variant="contained" color="primary"
                         onClick={this.submitProjectHandler}>Submit</Button>
+
+                <h4>Custom FORM</h4>
+                {form}
+
             </div>
         );
 
