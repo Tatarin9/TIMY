@@ -5,6 +5,14 @@
     white-space: nowrap;
     position: relative;
     display: flex;
+    /*width: fit-content;*/
+    /*margin: 0 auto;*/
+
+}
+
+.Filters {
+    display: flex;
+    justify-content: space-between;
 }
 
 .SkeletonColumn {

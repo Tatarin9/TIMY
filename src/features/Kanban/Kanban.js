@@ -184,7 +184,8 @@ class Kanban extends Component {
         let filters = null;
 
         filters = (
-            <div className={appClasses.flex + ' ' + appClasses.justifyBetween}>
+            // <div className={appClasses.flex + ' ' + appClasses.justifyBetween}>
+            <div className={classes.Filters}>
                 <div>Filters</div>
                 <button onClick={this.addProjectHandler}>Add project</button>
             </div>
@@ -206,9 +207,7 @@ class Kanban extends Component {
                 <Button variant="contained" color="primary"
                         onClick={this.updateKanbanColumnsHandler}>Update kanban columns</Button>
 
-
                 {filters}
-
                 <div className={classes.Kanban}>
                     {columns}
                 </div>

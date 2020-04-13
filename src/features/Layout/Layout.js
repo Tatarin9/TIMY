@@ -31,29 +31,33 @@ class Layout extends Component {
     render() {
         return (
             <Aux>
-                <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler}/>
-                <SideDrawer
-                    open={this.state.showSideDrawer}
-                    closed={this.sideDrawerClosedHandler}/>
-                <main className={classes.Content}>
-                    {this.props.children}
-                    <Switch>
-                        <Route path="/projects" exact component={Kanban}/>
-                        <Route path="/projects/create"
-                               exact
-                               render={(props) => (<Suspense fallback={<div>Loading...</div>}><Project {...props}/></Suspense>)}
-                        />
-                        {this.state.auth ?
-                            <Route path="/projects/:id"
+                <div className={classes.Page}>
+                    <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler}/>
+                    <SideDrawer
+                        open={this.state.showSideDrawer}
+                        closed={this.sideDrawerClosedHandler}/>
+                    <main className={classes.Content}>
+                        {this.props.children}
+                        <Switch>
+                            <Route path="/projects" exact component={Kanban}/>
+                            <Route path="/projects/create"
                                    exact
-                                   render={(props) => (<Suspense fallback={<div>Loading...</div>}><Project {...props}/></Suspense>)}
-                            /> : null}
+                                   render={(props) => (
+                                       <Suspense fallback={<div>Loading...</div>}><Project {...props}/></Suspense>)}
+                            />
+                            {this.state.auth ?
+                                <Route path="/projects/:id"
+                                       exact
+                                       render={(props) => (
+                                           <Suspense fallback={<div>Loading...</div>}><Project {...props}/></Suspense>)}
+                                /> : null}
 
-                        <Route path="/" exact component={Kanban}/>
-                        {/*<Redirect from="/" to="/projects"/>*/}
-                        <Route component={PageNotFound}/>
-                    </Switch>
-                </main>
+                            <Route path="/" exact component={Kanban}/>
+                            {/*<Redirect from="/" to="/projects"/>*/}
+                            <Route component={PageNotFound}/>
+                        </Switch>
+                    </main>
+                </div>
             </Aux>
         )
     }

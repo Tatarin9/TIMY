@@ -17,9 +17,9 @@ class Project extends Component {
     state = {
         projectForm: {
             controls: [
-                setFormControl('projectNameId', 'projectName', 'input', 'text', 'Project name', '', { required: true}, false, false),
-                setFormControl('projectCustomerId','customer', 'input', 'text', 'Customer name', '', { required: true}, false, false),
-                setFormControl('projectCustomerIdId','customerId', 'input', 'text', 'Customer id', '', { required: true}, false, false),
+                setFormControl('projectNameId', 'projectName', 'input', 'text', 'Project name', '', {required: true}, false, false),
+                setFormControl('projectCustomerId', 'customer', 'input', 'text', 'Customer name', '', {required: true}, false, false),
+                setFormControl('projectCustomerIdId', 'customerId', 'input', 'text', 'Customer id', '', {required: true}, false, false),
             ],
             valid: true
         },
@@ -40,10 +40,11 @@ class Project extends Component {
     // steps: [],
 
 
-
     componentDidMount() {
-        this.setState({loading: true});
-        const projectId = this.props.match.params.id;
+        if (this.props.match.params.id) {
+            this.setState({loading: true});
+
+            const projectId = this.props.match.params.id;
             axios.get(`/demo/projects/${projectId}.json`)
                 .then(response => {
                     console.log(response);
@@ -54,6 +55,7 @@ class Project extends Component {
                     console.log(error);
                     this.setState({loading: false, error: 'error to show'});
                 });
+        }
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -67,7 +69,7 @@ class Project extends Component {
 
         let controlIndex = -1;
         for (let projectProperty in project) {
-            controlIndex = updatedProjectForm.controls.findIndex( (control) => control.name === projectProperty );
+            controlIndex = updatedProjectForm.controls.findIndex((control) => control.name === projectProperty);
             if (controlIndex > -1) {
                 updatedProjectForm.controls[controlIndex].value = project[projectProperty];
             }
@@ -82,7 +84,7 @@ class Project extends Component {
         const updatedProjectForm = {
             ...this.state.projectForm
         };
-        const controlIndex = updatedProjectForm.controls.findIndex( (control) => control.id === inputIdentifier );
+        const controlIndex = updatedProjectForm.controls.findIndex((control) => control.id === inputIdentifier);
         const updatedFormElement = {
             ...updatedProjectForm.controls[controlIndex]
         };
@@ -103,14 +105,14 @@ class Project extends Component {
     submitProjectHandler = (event) => {
         event.preventDefault();
 
-        this.setState( { loading: true } );
+        this.setState({loading: true});
 
         const updatedProjectForm = {
             ...this.state.projectForm
         };
 
         const formData = {};
-        updatedProjectForm.controls.forEach( control => {
+        updatedProjectForm.controls.forEach(control => {
             formData[control.name] = control.value;
         })
 
@@ -143,14 +145,14 @@ class Project extends Component {
                         invalid={!formElement.valid}
                         shouldValidate={formElement.validation}
                         touched={formElement.touched}
-                        changed={(event) => this.inputChangedHandler(event, formElement.id)} />
+                        changed={(event) => this.inputChangedHandler(event, formElement.id)}/>
                 ))}
                 <Button btnType="Success" disabled={!this.state.projectForm.valid}
-                clicked={this.submitProjectHandler}>ORDER</Button>
+                        clicked={this.submitProjectHandler}>ORDER</Button>
             </form>
         );
-        if ( this.state.loading ) {
-            form =  <CircularProgress />;
+        if (this.state.loading) {
+            form = <CircularProgress/>;
         }
 
 
