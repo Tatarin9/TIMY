@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="3cc650fb-a41b-4b27-a6df-8cb1e7e0749b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Kanban/Column/Column.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Column/Column.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Layout/Layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Layout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Project/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Project/Project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +117,7 @@
       <workItem from="1586242003245" duration="1199000" />
       <workItem from="1586280605928" duration="60053000" />
       <workItem from="1586601358432" duration="7781000" />
+      <workItem from="1586778462990" duration="10782000" />
     </task>
     <task id="LOCAL-00001" summary="switch to webstorm">
       <created>1585690261567</created>
@@ -209,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586719718734</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="css updates">
+      <created>1586768996745</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1586768996745</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,13 +234,14 @@
     <MESSAGE value="add routing" />
     <MESSAGE value="add lazy loading" />
     <MESSAGE value="more form updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="more form updates" />
+    <MESSAGE value="css updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="css updates" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1586719718577">
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1586768996613">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586719718577" />
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586768996613" />
     <state x="247" y="162" width="1407" height="728" key="DiffContextDialog" timestamp="1586545797437">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -250,14 +259,14 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="174" key="SettingsEditor/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1585862227859" />
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1586719720302">
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1586769000849">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586719720302" />
-    <state x="641" y="278" width="863" height="590" key="find.popup" timestamp="1586687583537">
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586769000849" />
+    <state x="641" y="278" width="863" height="590" key="find.popup" timestamp="1586866676340">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="641" y="278" width="863" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586687583537" />
+    <state x="641" y="278" width="863" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586866676340" />
     <state x="653" y="332" width="670" height="413" key="git4idea.merge.GitPullDialog" timestamp="1586692091469">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

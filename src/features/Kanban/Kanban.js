@@ -57,17 +57,15 @@ class Kanban extends Component {
     };
 
     componentDidMount() {
-        setTimeout(() => {
-            axios.get('/demo/kanbanColumns.json')
-                .then(response => {
-                    const columns = Array.isArray(response.data) ? response.data : response.data[Object.keys(response.data)];
-                    this.setState({kanbanColumns: columns});
-                })
-                .catch(error => {
-                    console.log(error);
-                    this.setState({loading: false, error: 'error to show'});
-                });
-        }, 2500);
+        axios.get('/demo/kanbanColumns.json')
+            .then(response => {
+                const columns = Array.isArray(response.data) ? response.data : response.data[Object.keys(response.data)];
+                this.setState({kanbanColumns: columns});
+            })
+            .catch(error => {
+                console.log(error);
+                this.setState({loading: false, error: 'error to show'});
+            });
 
         axios.get('/demo/projects.json')
             .then(res => {
@@ -120,7 +118,7 @@ class Kanban extends Component {
         if (ticket && ticket.id) {
             // example how to build query params
             const queryParams = [];
-            const someDummyToQuery = [1,2,3];
+            const someDummyToQuery = [1, 2, 3];
             for (let i in someDummyToQuery) {
                 queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(someDummyToQuery[i]));
             }
@@ -149,6 +147,7 @@ class Kanban extends Component {
             columns = this.state.kanbanColumns.map((column, index) => {
                 return <KanbanColumn
                     title={column.title}
+                    color={column.color}
                     projects={this.state.projects.filter(project => project.status === column.status)}
                     ticketClicked={(ticket) => this.clickTicketHandler(ticket)}
                     key={column.id}
@@ -215,6 +214,9 @@ class Kanban extends Component {
                 <h2>Relevant articles:</h2>
                 <p>State management - RxJs + hooks:
                     https://blog.logrocket.com/rxjs-with-react-hooks-for-state-management/</p>
+                <p>React + firebase: https://www.robinwieruch.de/react-firebase-realtime-database</p>
+                <p>React drag and drop: https://react-dnd.github.io/react-dnd/about</p>
+                <p>React multi select: https://react-select.com/home + https://github.com/JedWatson/react-select</p>
             </Aux>
         )
     }

@@ -2,13 +2,23 @@
     flex-grow: 1;
     flex-basis: 0;
     min-height: 90vh;
-    border: solid 1px darkslategrey;
+    border: solid 1px #ccc;
 }
 
 .Column:not(:last-child) {
     margin-right: 1rem;
 }
 
-.ColumnTitle {
-    color: blueviolet;
+.TitleWrap {
+    box-sizing: border-box;
+    border-bottom: solid 1px #ccc;
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.ColumnTag {
+    box-sizing: border-box;
+    margin: 0.2rem;
+    width: 0.5rem;
+    height: 1.5rem;
 }

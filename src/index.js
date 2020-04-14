@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import { createStore } from 'redux';
+
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -29,6 +31,8 @@ import registerServiceWorker from './registerServiceWorker';
 //     // handle the error in the component that sent the request
 //     return Promise.reject(error);
 // });
+
+// const store = createStore();
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
