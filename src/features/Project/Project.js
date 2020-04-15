@@ -118,10 +118,24 @@ class Project extends Component {
 
         const project = {
             ...formData,
-            status: 'completed'
+            status: 'completed',
+            phases: [
+                {name: 'planning', estimatedHours: 12},
+                {name: 'design-review', estimatedHours: 10},
+                {name: 'development', estimatedHours: 15},
+                {name: 'testing', estimatedHours: 20},
+                {name: 'product-review', estimatedHours: 20},
+                {name: 'transition', estimatedHours: 20},
+                {name: 'support', estimatedHours: 20},
+            ],
+            currentPhase: 'planning'
         }
 
-        axios.post('/demo/projects.json', project)
+
+        const projectId = this.props.match.params.id;
+        const crudAction = projectId ? 'put' : 'post';
+        const endpointUrl = projectId ? `/demo/projects/${projectId}.json` : '/demo/projects.json';
+        axios[crudAction](endpointUrl, project)
             .then(response => {
                 console.log(response);
                 this.setState({loading: false, submitted: true});
