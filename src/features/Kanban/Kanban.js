@@ -18,6 +18,8 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import Box from '@material-ui/core/Box';
 import {Route} from 'react-router-dom';
 import Project from '../Project/Project';
+import {connect} from 'react-redux';
+import * as kanbanActions from '../Kanban/_store/kanban-actions';
 
 class Kanban extends Component {
 
@@ -26,24 +28,6 @@ class Kanban extends Component {
     //     super(props);
     //     this.state = {...};
     // }
-
-    // columns: [
-    //     {id: 1, title: 'Proposal', status: 'proposal'},
-    //     {id: 2, title: 'Pending approval', status: 'pending-approval'},
-    //     {id: 3, title: 'In progress', status: 'in-progress'},
-    //     {id: 4, title: 'Completed', status: 'completed'},
-    //     {id: 5, title: 'Archived', status: 'archived'}
-    // ]
-
-
-    // projects: [
-    //     {id: 1, name: 'project 1', status: 'proposal'},
-    //     {id: 2, name: 'project 2', status: 'pending-approval'},
-    //     {id: 3, name: 'project 3', status: 'in-progress'},
-    //     {id: 4, name: 'project 4', status: 'completed'},
-    //     {id: 5, name: 'project 5', status: 'archived'},
-    //     {id: 5, name: 'project 5', status: 'deleted'},
-    // ],
 
     state = {
         kanbanColumns: [],
@@ -91,13 +75,6 @@ class Kanban extends Component {
 
     updateKanbanColumnsHandler = () => {
         const columns = this.state.kanbanColumns;
-        // const columns =   [
-        //         {id: 1, title: 'Proposal', status: 'proposal'},
-        //         {id: 2, title: 'Pending approval', status: 'pending-approval'},
-        //         {id: 3, title: 'In progress', status: 'in-progress'},
-        //         {id: 4, title: 'Completed', status: 'completed'},
-        //         {id: 5, title: 'Archived', status: 'archived'}
-        //     ];
         axios.put('/demo/kanbanColumns.json', columns)
             .then(response => {
                 console.log(response);
@@ -214,12 +191,28 @@ class Kanban extends Component {
                 <h2>Relevant articles:</h2>
                 <p>State management - RxJs + hooks:
                     https://blog.logrocket.com/rxjs-with-react-hooks-for-state-management/</p>
+                <p>React + RxJs: https://jasonwatmore.com/post/2019/02/13/react-rxjs-communicating-between-components-with-observable-subject</p>
                 <p>React + firebase: https://www.robinwieruch.de/react-firebase-realtime-database</p>
                 <p>React drag and drop: https://react-dnd.github.io/react-dnd/about</p>
                 <p>React multi select: https://react-select.com/home + https://github.com/JedWatson/react-select</p>
+                <p>Injectable services in react: https://medium.com/the-guild/injectable-services-in-react-de0136b6d476</p>
             </Aux>
         )
     }
 }
 
-export default withErrorHandler(Kanban, axios);
+const mapStateToProps = state => {
+    return {
+        projects: state.projects
+    }
+};
+
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getProjects: () => dispatch(kanbanActions.getProjects()),
+        onDeleteProject: (projectId) => dispatch(kanbanActions.deleteProject(projectId))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(Kanban, axios));

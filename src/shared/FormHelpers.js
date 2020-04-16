@@ -17,7 +17,7 @@ export function setFormControl(id, name, elementType, configType, placeholder, v
     return control;
 }
 
-export function checkFromElementValidity(value, rules) {
+export function checkFormElementValidity(value, rules) {
     let isValid = true;
     if (!rules) {
         return true;

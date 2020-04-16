@@ -18,7 +18,7 @@ const kanbanColumn = (props) => {
                     <div>{props.title}</div>
                 </Grid>
             </Grid>
-            <Grid item style={{'margin-right': '0.5rem'}}>{props.projects.length}</Grid>
+            <Grid item style={{'marginRight': '0.5rem'}}>{props.projects.length}</Grid>
         </Grid>
     );
 

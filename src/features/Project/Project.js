@@ -7,7 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import classes from './Project.css';
 import Aux from '../../shared/hoc/Aux/Aux';
 import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
-import {setFormControl, checkFromElementValidity} from '../../shared/Helpers';
+import {setFormControl, checkFormElementValidity} from '../../shared/FormHelpers';
 import Input from '../../shared/UI/Input/Input';
 import Button from '../../shared/UI/Button/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -90,7 +90,7 @@ class Project extends Component {
         };
 
         updatedFormElement.value = event.target.value;
-        updatedFormElement.valid = checkFromElementValidity(updatedFormElement.value, updatedFormElement.validation);
+        updatedFormElement.valid = checkFormElementValidity(updatedFormElement.value, updatedFormElement.validation);
         updatedFormElement.touched = true;
         updatedProjectForm.controls[controlIndex] = updatedFormElement;
 
