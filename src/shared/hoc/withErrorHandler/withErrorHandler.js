@@ -47,7 +47,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
                         }}
                         open={!!this.state.error}
                         onClose={()=>{this.setState({error: null})}}
-                        autoHideDuration={10000}
+                        autoHideDuration={5000}
                         message={this.state.error ? this.state.error.message : null}
                     />
                     <WrappedComponent {...this.props}/>

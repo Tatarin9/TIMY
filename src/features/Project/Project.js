@@ -7,10 +7,12 @@ import TextField from '@material-ui/core/TextField';
 import classes from './Project.css';
 import Aux from '../../shared/hoc/Aux/Aux';
 import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
-import {setFormControl, checkFormElementValidity} from '../../shared/FormHelpers';
+import {setFormControl, formControlChangeHandler} from '../../shared/FormHelpers';
 import Input from '../../shared/UI/Input/Input';
 import Button from '../../shared/UI/Button/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import * as projectActions from './_store/project-actions';
+import {connect} from 'react-redux';
 
 class Project extends Component {
 
@@ -23,9 +25,7 @@ class Project extends Component {
             ],
             valid: true
         },
-        loading: false,
         submitted: false,
-        error: null,
     };
 
     // projectName: '',
@@ -42,18 +42,19 @@ class Project extends Component {
 
     componentDidMount() {
         if (this.props.match.params.id) {
-            this.setState({loading: true});
+            // this.setState({loading: true});
 
             const projectId = this.props.match.params.id;
+            this.props.getProjectRequest();
             axios.get(`/demo/projects/${projectId}.json`)
                 .then(response => {
-                    console.log(response);
+                    this.props.getProjectSuccess(response.data);
                     this.patchFormValues(response.data);
-                    this.setState({loading: false});
+                    // this.setState({loading: false});
                 })
                 .catch(error => {
-                    console.log(error);
-                    this.setState({loading: false, error: 'error to show'});
+                    this.props.getProjectFailure(error);
+                    // this.setState({loading: false, error: 'error to show'});
                 });
         }
     }
@@ -74,39 +75,16 @@ class Project extends Component {
                 updatedProjectForm.controls[controlIndex].value = project[projectProperty];
             }
         }
-
         this.setState({projectForm: updatedProjectForm});
-
     }
 
-    inputChangedHandler = (event, inputIdentifier) => {
-
-        const updatedProjectForm = {
-            ...this.state.projectForm
-        };
-        const controlIndex = updatedProjectForm.controls.findIndex((control) => control.id === inputIdentifier);
-        const updatedFormElement = {
-            ...updatedProjectForm.controls[controlIndex]
-        };
-
-        updatedFormElement.value = event.target.value;
-        updatedFormElement.valid = checkFormElementValidity(updatedFormElement.value, updatedFormElement.validation);
-        updatedFormElement.touched = true;
-        updatedProjectForm.controls[controlIndex] = updatedFormElement;
-
-        let isFormValid = true;
-        for (let inputIdentifier in updatedProjectForm) {
-            isFormValid = updatedProjectForm.controls[controlIndex].valid && isFormValid;
-        }
-        updatedProjectForm.valid = isFormValid;
+    inputChangedHandler = (event, controlId) => {
+        const updatedProjectForm = formControlChangeHandler(event.target.value, controlId, this.state.loginForm )
         this.setState({projectForm: updatedProjectForm});
     }
 
     submitProjectHandler = (event) => {
         event.preventDefault();
-
-        this.setState({loading: true});
-
         const updatedProjectForm = {
             ...this.state.projectForm
         };
@@ -131,44 +109,39 @@ class Project extends Component {
             currentPhase: 'planning'
         }
 
-
         const projectId = this.props.match.params.id;
         const crudAction = projectId ? 'put' : 'post';
         const endpointUrl = projectId ? `/demo/projects/${projectId}.json` : '/demo/projects.json';
         axios[crudAction](endpointUrl, project)
             .then(response => {
-                console.log(response);
-                this.setState({loading: false, submitted: true});
                 this.props.history.push('/projects');
             })
             .catch(error => {
                 console.log(error);
-                this.setState({loading: false, error: 'error to show'});
             });
     }
 
     render() {
         let form = (
             <form onSubmit={this.submitProjectHandler}>
-                {this.state.projectForm.controls.map(formElement => (
+                {this.state.projectForm.controls.map(formControl => (
                     <Input
-                        key={formElement.id}
-                        elementType={formElement.elementType}
-                        elementConfig={formElement.elementConfig}
-                        value={formElement.value}
-                        invalid={!formElement.valid}
-                        shouldValidate={formElement.validation}
-                        touched={formElement.touched}
-                        changed={(event) => this.inputChangedHandler(event, formElement.id)}/>
+                        key={formControl.id}
+                        elementType={formControl.elementType}
+                        elementConfig={formControl.elementConfig}
+                        value={formControl.value}
+                        invalid={!formControl.valid}
+                        shouldValidate={formControl.validation}
+                        touched={formControl.touched}
+                        changed={(event) => this.inputChangedHandler(event, formControl.id)}/>
                 ))}
                 <Button btnType="Success" disabled={!this.state.projectForm.valid}
                         clicked={this.submitProjectHandler}>ORDER</Button>
             </form>
         );
-        if (this.state.loading) {
+        if (this.props.isProjectLoading) {
             form = <CircularProgress/>;
         }
-
 
         let project = null;
         project = (
@@ -198,4 +171,22 @@ class Project extends Component {
     }
 }
 
-export default withErrorHandler(Project, axios);
+const mapStateToProps = state => {
+    return {
+        currentProject: state.currentProject.currentProject,
+        isProjectLoading: state.currentProject.isProjectLoading,
+        error: state.currentProject.error
+    }
+};
+
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getProjectRequest: () => dispatch(projectActions.getProjectRequestAction()),
+        getProjectSuccess: (project) => dispatch(projectActions.getProjectSuccessAction(project)),
+        getProjectFailure: (error) => dispatch(projectActions.getProjectFailureAction(error)),
+        // onDeleteProject: (projectId) => dispatch(projectActions.deleteProject(projectId))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(Project, axios));

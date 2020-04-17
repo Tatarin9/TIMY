@@ -5,9 +5,10 @@ import Toolbar from './Navigation/Toolbar/Toolbar';
 import SideDrawer from './Navigation/SideDrawer/SideDrawer';
 
 import classes from './Layout.css';
-import {Redirect, Route, Switch} from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import Kanban from '../Kanban/Kanban';
 import PageNotFound from '../../shared/UI/PageNotFound/PageNotFound';
+import Auth from '../Auth/Auth';
 
 // import Project from '../Project/Project';
 const Project = React.lazy(() => import('../Project/Project'));
@@ -39,6 +40,8 @@ class Layout extends Component {
                     <main className={classes.Content}>
                         {this.props.children}
                         <Switch>
+                            <Route path="/auth/signin" exact component={Auth}/>
+                            <Route path="/auth/signup" exact component={Auth}/>
                             <Route path="/projects" exact component={Kanban}/>
                             <Route path="/projects/create"
                                    exact

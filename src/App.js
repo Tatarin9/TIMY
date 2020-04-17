@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter} from 'react-router-dom';
 
 import {Provider} from 'react-redux';
-import {combineReducers, createStore, applyMiddleware, compose} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 
 import Layout from './features/Layout/Layout';
 import rootReducer from './store/reducer';

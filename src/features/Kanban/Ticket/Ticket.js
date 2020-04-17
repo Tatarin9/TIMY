@@ -6,7 +6,7 @@ import Button from '../../../shared/UI/Button/Button';
 import Grid from '@material-ui/core/Grid';
 import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
-import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
+import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import ForwardOutlinedIcon from '@material-ui/icons/ForwardOutlined'
 import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
@@ -49,8 +49,8 @@ const kanbanTicket = (props) => {
 
                     <Grid container justify="center">
                         <Grid item>
-                            <Tooltip title="Move">
-                                <IconButton aria-label="move" style={{'padding': '5px'}}>
+                            <Tooltip title="Move left">
+                                <IconButton aria-label="move" style={{'padding': '5px'}}  disabled={props.columnNumber === 1}>
                                     <ForwardOutlinedIcon fontSize="small" style={{'fontSize': '1.1rem', transform: 'rotate(180deg)'}}/>
                                 </IconButton>
                             </Tooltip>
@@ -63,15 +63,15 @@ const kanbanTicket = (props) => {
                             </Tooltip>
                         </Grid>
                         <Grid item>
-                            <Tooltip title="Delete">
-                                <IconButton aria-label="delete" style={{'padding': '5px'}}>
-                                    <DeleteOutlinedIcon fontSize="small" style={{'fontSize': '1.1rem'}}/>
+                            <Tooltip title="Archive">
+                                <IconButton aria-label="archive" style={{'padding': '5px'}}>
+                                    <ArchiveOutlinedIcon fontSize="small" style={{'fontSize': '1.1rem'}}/>
                                 </IconButton>
                             </Tooltip>
                         </Grid>
                         <Grid item>
-                            <Tooltip title="Move">
-                                <IconButton aria-label="move" style={{'padding': '5px'}}>
+                            <Tooltip title="Move right">
+                                <IconButton aria-label="move" style={{'padding': '5px'}} disabled={props.columnNumber === props.totalColumns}>
                                     <ForwardOutlinedIcon fontSize="small" style={{'fontSize': '1.1rem'}}/>
                                 </IconButton>
                             </Tooltip>

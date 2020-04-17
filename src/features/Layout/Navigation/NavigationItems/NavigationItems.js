@@ -13,6 +13,10 @@ const navigationItems = () => (
                             exact>Projects</NavigationItem>
             <NavigationItem link={{pathname: '/projects/create', hash: '#submit', search: '?quick-submit=true'}}
                             exact>Add Project</NavigationItem>
+            <NavigationItem link={{pathname: '/auth/signin'}}
+                            exact>Signin</NavigationItem>
+            <NavigationItem link={{pathname: '/auth/signup'}}
+                            exact>Signup</NavigationItem>
         </ul>
 
     </Aux>

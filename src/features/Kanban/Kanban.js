@@ -7,19 +7,15 @@ import Aux from '../../shared/hoc/Aux/Aux';
 import KanbanColumn from './Column/Column';
 
 // import '../../App.css';
-import appClasses from '../../App.css';
+// import appClasses from '../../App.css';
 import classes from './Kanban.css';
-import Modal from '../../shared/UI/Modal/Modal';
+// import Modal from '../../shared/UI/Modal/Modal';
 import Spinner from '../../shared/UI/Spinner/Spinner';
 
 import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
 import Button from '@material-ui/core/Button';
 import Skeleton from '@material-ui/lab/Skeleton';
 import Box from '@material-ui/core/Box';
-import {Route} from 'react-router-dom';
-import Project from '../Project/Project';
-import {connect} from 'react-redux';
-import * as kanbanActions from '../Kanban/_store/kanban-actions';
 
 class Kanban extends Component {
 
@@ -123,6 +119,8 @@ class Kanban extends Component {
         if (this.state.kanbanColumns.length > 0 && this.state.projects.length > 0) {
             columns = this.state.kanbanColumns.map((column, index) => {
                 return <KanbanColumn
+                    columnNumber={index + 1}
+                    totalColumns={this.state.kanbanColumns.length}
                     title={column.title}
                     color={column.color}
                     projects={this.state.projects.filter(project => project.status === column.status)}
@@ -201,18 +199,5 @@ class Kanban extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        projects: state.projects
-    }
-};
 
-
-const mapDispatchToProps = dispatch => {
-    return {
-        getProjects: () => dispatch(kanbanActions.getProjects()),
-        onDeleteProject: (projectId) => dispatch(kanbanActions.deleteProject(projectId))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(Kanban, axios));
+export default withErrorHandler(Kanban, axios);

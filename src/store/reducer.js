@@ -1,9 +1,10 @@
-import {combineReducers, createStore, applyMiddleware} from 'redux';
-import kanbanReducer from '../features/Kanban/_store/kanban-reducer';
-
+import {combineReducers} from 'redux';
+import projectReducer from '../features/Project/_store/project-reducer';
+import authReducer from '../features/Auth/_store/auth-reducer';
 
 const rootReducer = combineReducers({
-    kanban: kanbanReducer
+    currentProject: projectReducer,
+    auth: authReducer
 });
 
 export default rootReducer;

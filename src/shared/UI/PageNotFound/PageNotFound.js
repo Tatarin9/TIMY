@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './PageNotFound.css';
+// import classes from './PageNotFound.css';
 
 const pageNotFound = (props) => (
     <div>

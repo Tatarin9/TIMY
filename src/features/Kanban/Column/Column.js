@@ -2,10 +2,10 @@ import React from 'react';
 
 import Aux from '../../../shared/hoc/Aux/Aux';
 import classes from './Column.css';
-import appClasses from '../../../App.css';
+// import appClasses from '../../../App.css';
 
 import KanbanTicket from '../Ticket/Ticket';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 
 const kanbanColumn = (props) => {
@@ -28,6 +28,8 @@ const kanbanColumn = (props) => {
                 <KanbanTicket
                     key={project.id}
                     project={project}
+                    columnNumber={props.columnNumber}
+                    totalColumns={props.totalColumns}
                     currentTicket={() => props.ticketClicked(project)}
                 />
             )

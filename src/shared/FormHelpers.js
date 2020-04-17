@@ -47,3 +47,31 @@ export function checkFormElementValidity(value, rules) {
 
     return isValid;
 }
+
+export function formControlChangeHandler(newValue, controlId, stateForm) {
+    const updatedForm = {
+        ...stateForm
+    };
+
+    const controlIndex = updatedForm.controls.findIndex((control) => control.id === controlId);
+    const updatedFormElement = {
+        ...updatedForm.controls[controlIndex]
+    };
+
+    updatedFormElement.value = newValue;
+    updatedFormElement.valid = checkFormElementValidity(updatedFormElement.value, updatedFormElement.validation);
+    updatedFormElement.touched = true;
+    updatedForm.controls[controlIndex] = updatedFormElement;
+
+    let isFormValid = true;
+    for (let inputIdentifier in updatedForm) {
+        isFormValid = updatedForm.controls[controlIndex].valid && isFormValid;
+    }
+    updatedForm.valid = isFormValid;
+    return updatedForm;
+}
+
+export function getFormControlValueById(form, controlId) {
+    const controlIndex = form.controls.findIndex((control) => control.id === controlId);
+    return controlIndex > -1 ? form.controls[controlIndex].value : null;
+}
