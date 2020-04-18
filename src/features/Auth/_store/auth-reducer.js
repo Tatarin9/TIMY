@@ -3,6 +3,7 @@ import * as actionTypes from './auth-actions'
 const initialState = {
     authData: null,
     isLoading: false,
+    pathBeforeLogout: null, // TODO - how to redirect after logout
     error: null
 }
 
@@ -26,6 +27,14 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 error: action.payload.error,
                 isLoading: false
+            };
+        case actionTypes.AUTH_LOGOUT:
+            return {
+                ...state,
+                authData: null,
+                error: null,
+                isLoading: false,
+                pathBeforeLogout: action.payload.pathBeforeLogout
             };
         default:
             return state;

@@ -17,6 +17,8 @@ const navigationItems = () => (
                             exact>Signin</NavigationItem>
             <NavigationItem link={{pathname: '/auth/signup'}}
                             exact>Signup</NavigationItem>
+            <NavigationItem link={{pathname: '/auth/logout'}}
+                            exact>Logout</NavigationItem>
         </ul>
 
     </Aux>

@@ -65,8 +65,8 @@ class Kanban extends Component {
 
     }
 
-    addProjectHandler = () => {
-        alert('add new project form will render');
+    logoutHandler = () => {
+        this.props.history.push('/auth/logout');
     };
 
     updateKanbanColumnsHandler = () => {
@@ -161,7 +161,7 @@ class Kanban extends Component {
             // <div className={appClasses.flex + ' ' + appClasses.justifyBetween}>
             <div className={classes.Filters}>
                 <div>Filters</div>
-                <button onClick={this.addProjectHandler}>Add project</button>
+                <button onClick={this.logoutHandler}>LOGOUT</button>
             </div>
         );
 

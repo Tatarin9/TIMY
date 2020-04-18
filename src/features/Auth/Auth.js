@@ -10,6 +10,7 @@ import {connect} from 'react-redux';
 import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
 import axios from 'axios';
 import * as authActions from './_store/auth-actions';
+import {Redirect} from 'react-router-dom';
 
 class Auth extends Component {
     state = {
@@ -31,6 +32,7 @@ class Auth extends Component {
     };
 
     componentDidMount() {
+        console.log(this.props);
         if (this.props.location.pathname === '/auth/signup') {
             this.setState({isSignup: true});
         }
@@ -56,13 +58,14 @@ class Auth extends Component {
 
         axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:${methodParam}?key=AIzaSyAVVqYQhmq2ItJXERsC_qrmg-LRsfrH-Fw`, authData)
             .then(response => {
-               this.props.authSuccess(response.data);
-                // this.patchFormValues(response.data);
-                // this.setState({loading: false});
+                const authData = {...response.data};
+                const expiresAt = new Date(new Date().getTime() + authData.expiresIn * 1000);
+                authData.expiresAt = expiresAt;
+               this.props.authSuccess(authData);
+               localStorage.setItem('auth', JSON.stringify(authData));
             })
             .catch(error => {
                 this.props.authFailure(error);
-                // this.setState({loading: false, error: 'error to show'});
             });
     }
 
@@ -88,8 +91,14 @@ class Auth extends Component {
             loginForm = <CircularProgress/>;
         }
 
+        let authRedirect = null;
+        if (this.props.authData != null) {
+            authRedirect = <Redirect to="/" />
+        }
+
         return (
             <Aux>
+                {authRedirect}
                 {loginForm}
             </Aux>
         )
