@@ -1,0 +1,24 @@
+import React from 'react';
+import {configure, shallow} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import Project from './Project';
+import {Input} from '@material-ui/icons';
+
+configure({adapter: new Adapter()});
+
+describe('<Project />', () => {
+
+    let wrapper;
+    beforeEach(() => {
+        wrapper = shallow(<Project
+            getProjectRequest={() => {}}
+            getProjectSuccess={() => {}}
+            getProjectFailure={() => {}}/>);
+    });
+
+    it('should render if authenticated', () => {
+
+        expect(wrapper.find(Input)).toBeGreaterThan(0);
+    });
+
+});

@@ -2,10 +2,8 @@ import React, {Component} from 'react';
 import axios from '../../axios';
 
 import TextField from '@material-ui/core/TextField';
-// import Button from '@material-ui/core/Button';
 
 import classes from './Project.css';
-import Aux from '../../shared/hoc/Aux/Aux';
 import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
 import {setFormControl, formControlChangeHandler} from '../../shared/FormHelpers';
 import Input from '../../shared/UI/Input/Input';
@@ -14,7 +12,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import * as projectActions from './_store/project-actions';
 import {connect} from 'react-redux';
 
-class Project extends Component {
+export class Project extends Component {
 
     state = {
         projectForm: {
@@ -28,22 +26,8 @@ class Project extends Component {
         submitted: false,
     };
 
-    // projectName: '',
-    // customer: '',
-    // customerId: '',
-    // approvalDate: '',
-    // dueDate: '',
-    // budgetHours: '',
-    // actualHours: '',
-    // ownerId: '',
-    // ownerName: '',
-    // steps: [],
-
-
     componentDidMount() {
         if (this.props.match.params.id) {
-            // this.setState({loading: true});
-
             const projectId = this.props.match.params.id;
             this.props.getProjectRequest();
             axios.get(`/demo/projects/${projectId}.json`)
@@ -164,9 +148,9 @@ class Project extends Component {
         );
 
         return (
-            <Aux>
+            <React.Fragment>
                 {project}
-            </Aux>
+            </React.Fragment>
         )
     }
 }

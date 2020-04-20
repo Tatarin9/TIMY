@@ -5,7 +5,6 @@ import Button from '../../shared/UI/Button/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import classes from '../Project/Project.css';
 import TextField from '@material-ui/core/TextField';
-import Aux from '../../shared/hoc/Aux/Aux';
 import {connect} from 'react-redux';
 import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
 import axios from 'axios';
@@ -63,6 +62,7 @@ class Auth extends Component {
                 authData.expiresAt = expiresAt;
                this.props.authSuccess(authData);
                localStorage.setItem('auth', JSON.stringify(authData));
+               this.props.history.push('/');
             })
             .catch(error => {
                 this.props.authFailure(error);
@@ -97,10 +97,10 @@ class Auth extends Component {
         }
 
         return (
-            <Aux>
+            <React.Fragment>
                 {authRedirect}
                 {loginForm}
-            </Aux>
+            </React.Fragment>
         )
     }
 }

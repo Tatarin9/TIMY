@@ -1,7 +1,6 @@
 import React, {Component, Suspense} from 'react';
 
-import Aux from '../../shared/hoc/Aux/Aux';
-import Toolbar from './Navigation/Toolbar/Toolbar';
+import NavMenu from './Navigation/NavMenu/NavMenu';
 import SideDrawer from './Navigation/SideDrawer/SideDrawer';
 
 import classes from './Layout.css';
@@ -96,18 +95,20 @@ class Layout extends Component {
         }
 
         return (
-            <Aux>
+            <React.Fragment>
                 <div className={classes.Page}>
-                    <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler}/>
+                    <NavMenu drawerToggleClicked={this.sideDrawerToggleHandler}
+                             isAuthenticated={this.props.isAuth}/>
                     <SideDrawer
                         open={this.state.showSideDrawer}
+                        isAuthenticated={this.props.isAuth}
                         closed={this.sideDrawerClosedHandler}/>
                     <main className={classes.Content}>
                         {this.props.children}
                         {routes}
                     </main>
                 </div>
-            </Aux>
+            </React.Fragment>
         )
     }
 }

@@ -4,7 +4,6 @@ import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.css';
 import Backdrop from '../../../../shared/UI/Backdrop/Backdrop';
-import Aux from '../../../../shared/hoc/Aux/Aux';
 
 const sideDrawer = ( props ) => {
     let attachedClasses = [classes.SideDrawer, classes.Close];
@@ -12,17 +11,17 @@ const sideDrawer = ( props ) => {
         attachedClasses = [classes.SideDrawer, classes.Open];
     }
     return (
-        <Aux>
+        <React.Fragment>
             <Backdrop show={props.open} clicked={props.closed}/>
             <div className={attachedClasses.join(' ')}>
                 <div className={classes.Logo}>
                     <Logo type="colored"/>
                 </div>
                 <nav>
-                    <NavigationItems />
+                    <NavigationItems clicked={props.closed}/>
                 </nav>
             </div>
-        </Aux>
+        </React.Fragment>
     );
 };
 

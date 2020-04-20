@@ -1,4 +1,4 @@
-.Toolbar {
+.NavMenu {
     height: 56px;
     width: 100%;
     position: fixed;
@@ -13,7 +13,7 @@
     z-index: 90;
 }
 
-.Toolbar nav {
+.NavMenu nav {
     height: 100%;
 }
 

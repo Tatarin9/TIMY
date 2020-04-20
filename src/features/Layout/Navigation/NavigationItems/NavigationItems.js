@@ -1,28 +1,35 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
 
 import classes from './NavigationItems.css';
 
-import Aux from '../../../../shared/hoc/Aux/Aux';
 import NavigationItem from './NavigationItem/NavigationItem';
 
-const navigationItems = () => (
-    <Aux>
-        <ul className={classes.NavigationItems}>
-            <NavigationItem link={{pathname: '/'}}
-                            exact>Projects</NavigationItem>
-            <NavigationItem link={{pathname: '/projects/create', hash: '#submit', search: '?quick-submit=true'}}
-                            exact>Add Project</NavigationItem>
-            <NavigationItem link={{pathname: '/auth/signin'}}
-                            exact>Signin</NavigationItem>
-            <NavigationItem link={{pathname: '/auth/signup'}}
-                            exact>Signup</NavigationItem>
-            <NavigationItem link={{pathname: '/auth/logout'}}
-                            exact>Logout</NavigationItem>
-        </ul>
+const navigationItems = (props) => (
+    <ul className={classes.NavigationItems}>
+        {props.isAuthenticated ?
+            <React.Fragment>
+                <NavigationItem link={{pathname: '/'}} clicked={props.clicked}
+                                exact>Projects</NavigationItem>
+                <NavigationItem link={{pathname: '/projects/create', hash: '#submit', search: '?quick-submit=true'}}
+                                clicked={props.clicked}
+                                exact>Add Project</NavigationItem>
+                <NavigationItem link={{pathname: '/auth/logout'}}
+                                clicked={props.clicked}
+                                exact>Logout</NavigationItem>
+            </React.Fragment>
 
-    </Aux>
-
+            : null}
+        {!props.isAuthenticated ?
+            <React.Fragment>
+                <NavigationItem link={{pathname: '/auth/signin'}}
+                                clicked={props.clicked}
+                                exact>Signin</NavigationItem>
+                <NavigationItem link={{pathname: '/auth/signup'}}
+                                clicked={props.clicked}
+                                exact>Signup</NavigationItem>
+            </React.Fragment>
+            : null}
+    </ul>
 );
 
 export default navigationItems;

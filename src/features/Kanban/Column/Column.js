@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Aux from '../../../shared/hoc/Aux/Aux';
 import classes from './Column.css';
 // import appClasses from '../../../App.css';
 
@@ -36,12 +35,12 @@ const kanbanColumn = (props) => {
         });
 
     return (
-        <Aux>
+        <React.Fragment>
             <div className={classes.Column}>
                 {columnTitle}
                 {columnTickets}
             </div>
-        </Aux>
+        </React.Fragment>
     );
 
 };

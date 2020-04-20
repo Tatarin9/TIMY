@@ -1,16 +1,11 @@
 import React, {Component} from 'react';
-// import axios from 'axios';
 import axios from '../../axios';
 
 
-import Aux from '../../shared/hoc/Aux/Aux';
 import KanbanColumn from './Column/Column';
 
-// import '../../App.css';
 // import appClasses from '../../App.css';
 import classes from './Kanban.css';
-// import Modal from '../../shared/UI/Modal/Modal';
-import Spinner from '../../shared/UI/Spinner/Spinner';
 
 import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
 import Button from '@material-ui/core/Button';
@@ -86,8 +81,6 @@ class Kanban extends Component {
         this.setState({isTicketClicked: true, currentTicket: ticket, loading: true});
 
         // retrieve project (POST) from backend
-        // this.setState({loading: true});
-
         if (ticket && ticket.id) {
             // example how to build query params
             const queryParams = [];
@@ -103,18 +96,7 @@ class Kanban extends Component {
         }
     };
 
-    cancelModalHandler = () => {
-        this.setState({isTicketClicked: false});
-    };
-
-    snackbarCloseHandler = () => {
-        alert('close snackbar');
-        this.setState({error: null});
-    };
-
-
     render() {
-
         let columns = null;
         if (this.state.kanbanColumns.length > 0 && this.state.projects.length > 0) {
             columns = this.state.kanbanColumns.map((column, index) => {
@@ -165,19 +147,9 @@ class Kanban extends Component {
             </div>
         );
 
-        let modalContent = (
-            <div>
-                <p>ticket clicked</p>
-                <p>{this.state.currentTicket ? this.state.currentTicket.name : null}</p>
-            </div>
-        );
-
-        if (this.state.loading) {
-            modalContent = <Spinner/>
-        }
 
         return (
-            <Aux>
+            <React.Fragment>
                 <Button variant="contained" color="primary"
                         onClick={this.updateKanbanColumnsHandler}>Update kanban columns</Button>
 
@@ -189,15 +161,16 @@ class Kanban extends Component {
                 <h2>Relevant articles:</h2>
                 <p>State management - RxJs + hooks:
                     https://blog.logrocket.com/rxjs-with-react-hooks-for-state-management/</p>
+                <p>React + Redux in depth: https://medium.com/octopus-wealth/authenticated-routing-with-react-react-router-redux-typescript-677ed49d4bd6</p>
                 <p>React + RxJs: https://jasonwatmore.com/post/2019/02/13/react-rxjs-communicating-between-components-with-observable-subject</p>
                 <p>React + firebase: https://www.robinwieruch.de/react-firebase-realtime-database</p>
                 <p>React drag and drop: https://react-dnd.github.io/react-dnd/about</p>
                 <p>React multi select: https://react-select.com/home + https://github.com/JedWatson/react-select</p>
                 <p>Injectable services in react: https://medium.com/the-guild/injectable-services-in-react-de0136b6d476</p>
-            </Aux>
+                <p>remember url before logout with store middleware: https://github.com/ReactTraining/react-router/issues/1066</p>
+            </React.Fragment>
         )
     }
 }
-
 
 export default withErrorHandler(Kanban, axios);

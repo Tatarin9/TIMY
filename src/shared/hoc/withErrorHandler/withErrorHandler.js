@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Aux from '../Aux/Aux';
 import Snackbar from '@material-ui/core/Snackbar';
 
 const withErrorHandler = (WrappedComponent, axios) => {
@@ -39,7 +38,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
 
         render () {
             return (
-                <Aux>
+                <React.Fragment>
                     <Snackbar
                         anchorOrigin={{
                             vertical: 'bottom',
@@ -51,7 +50,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
                         message={this.state.error ? this.state.error.message : null}
                     />
                     <WrappedComponent {...this.props}/>
-                </Aux>
+                </React.Fragment>
             );
         }
 

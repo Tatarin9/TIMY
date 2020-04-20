@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import classes from './Ticket.css';
-import Aux from '../../../shared/hoc/Aux/Aux';
 import Button from '../../../shared/UI/Button/Button';
 import Grid from '@material-ui/core/Grid';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -11,7 +10,8 @@ import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import ForwardOutlinedIcon from '@material-ui/icons/ForwardOutlined'
 import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
 
-const kanbanTicket = (props) => {
+const kanbanTicket = React.memo((props) => {
+    const ticketState = useState({projectStatus: null});
 
     const maxHours = Math.max(props.project.actualHours, props.project.budgetHours, props.project.issuedHours);
     const actualPercent = props.project.actualHours / maxHours * 100 + '%';
@@ -19,7 +19,7 @@ const kanbanTicket = (props) => {
     const issuedPercent = props.project.issuedHours / maxHours * 100 + '%';
 
     return (
-        <Aux>
+        <React.Fragment>
             <div className={classes.Ticket}>
                 <div
                     className={classes.TicketTitle}>{props.project.projectName + ' (' + props.project.customer + ')'}</div>
@@ -64,7 +64,8 @@ const kanbanTicket = (props) => {
                         </Grid>
                         <Grid item>
                             <Tooltip title="Archive">
-                                <IconButton aria-label="archive" style={{'padding': '5px'}}>
+                                <IconButton aria-label="archive" style={{'padding': '5px'}}
+                                            onClick={event => {ticketState[1]({projectStatus: 'archived'}) }}>
                                     <ArchiveOutlinedIcon fontSize="small" style={{'fontSize': '1.1rem'}}/>
                                 </IconButton>
                             </Tooltip>
@@ -79,9 +80,9 @@ const kanbanTicket = (props) => {
                     </Grid>
                 </div>
             </div>
-        </Aux>
+        </React.Fragment>
     );
 
-};
+});
 
 export default kanbanTicket;
