@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect} from 'react';
 import {BrowserRouter} from 'react-router-dom';
 
 import {Provider} from 'react-redux';
@@ -22,11 +22,13 @@ const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(loggerMiddleware)));
 
-class App extends Component {
+const app = props => {
 
-    render() {
-        // console.log('store');
-        // console.log(store.getState());
+    // check auto auth here
+    useEffect(() => {
+
+    }, []);
+
         return (
             <Provider store={store}>
                 <BrowserRouter>
@@ -34,7 +36,6 @@ class App extends Component {
                 </BrowserRouter>
             </Provider>
         );
-    }
 }
 
-export default App;
+export default app;

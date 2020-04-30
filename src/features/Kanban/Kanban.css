@@ -19,7 +19,7 @@
     display: inline-block;
     width: 200px;
     margin: 0 0.5rem;
-    min-height: 90vh;
+    min-height: calc(90vh - 100px);
 }
 
 /*@media (min-width: 1000px) and (min-height: 700px) {*/
