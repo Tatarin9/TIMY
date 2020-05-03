@@ -5,6 +5,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+
+import configureAuthStore from './features/Auth/_store/auth-store';
+
 // import axios from 'axios';
 //
 // axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
@@ -33,6 +36,8 @@ import registerServiceWorker from './registerServiceWorker';
 // });
 
 // const store = createStore();
+
+configureAuthStore();
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

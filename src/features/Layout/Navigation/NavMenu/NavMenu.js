@@ -12,7 +12,7 @@ const navMenu = (props) => (
             <Logo type="white"/>
         </div>
         <nav className={classes.DesktopOnly}>
-            <NavigationItems isAuthenticated={props.isAuthenticated}/>
+            <NavigationItems isAuthenticated={props.isAuthenticated} clicked={props.clicked}/>
         </nav>
     </header>
 );

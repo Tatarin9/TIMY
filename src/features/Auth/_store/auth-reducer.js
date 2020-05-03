@@ -3,7 +3,6 @@ import * as actionTypes from './auth-actions'
 const initialState = {
     authData: null,
     isLoading: false,
-    pathBeforeLogout: null, // TODO - how to redirect after logout
     error: null
 }
 

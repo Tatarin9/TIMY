@@ -1,55 +1,56 @@
-import React, {Component} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from '../../axios';
-
-import TextField from '@material-ui/core/TextField';
 
 import classes from './Project.css';
 import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
-import {setFormControl, formControlChangeHandler} from '../../shared/FormHelpers';
+import { setFormControl, formControlChangeHandler } from '../../shared/FormHelpers';
 import Input from '../../shared/UI/Input/Input';
 import Button from '../../shared/UI/Button/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import * as projectActions from './_store/project-actions';
-import {connect} from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 
-export class Project extends Component {
+const project = props => {
 
-    state = {
-        projectForm: {
-            controls: [
-                setFormControl('projectNameId', 'projectName', 'input', 'text', 'Project name', '', {required: true}, false, false),
-                setFormControl('projectCustomerId', 'customer', 'input', 'text', 'Customer name', '', {required: true}, false, false),
-                setFormControl('projectCustomerIdId', 'customerId', 'input', 'text', 'Customer id', '', {required: true}, false, false),
-            ],
-            valid: true
-        },
-        submitted: false,
-    };
+    const [projectForm, setProjectForm] = useState({
+        controls: [
+            setFormControl('projectNameId', 'projectName', 'input', 'text', 'Project name', '', {required: true}, false, false),
+            setFormControl('projectCustomerId', 'customer', 'input', 'text', 'Customer name', '', {required: true}, false, false),
+            setFormControl('projectCustomerIdId', 'customerId', 'input', 'text', 'Customer id', '', {required: true}, false, false),
+        ],
+        valid: true
+    });
 
-    componentDidMount() {
-        if (this.props.match.params.id) {
-            const projectId = this.props.match.params.id;
-            this.props.getProjectRequest();
+    const dispatch = useDispatch();
+    const getProjectRequest = () => dispatch(projectActions.getProjectRequestAction());
+    const getProjectSuccess = (project) => dispatch(projectActions.getProjectSuccessAction(project));
+    const getProjectFailure = (error) => dispatch(projectActions.getProjectFailureAction(error));
+
+
+    const currentProject = useSelector(state => state.currentProject.currentProject);
+    const isProjectLoading = useSelector(state => state.currentProject.isProjectLoading);
+    const error = useSelector(state => state.currentProject.error);
+
+
+    // send request only on first render (pass [] in useEffect arguments)
+    useEffect(() => {
+        if (props.match.params.id) {
+            const projectId = props.match.params.id;
+            getProjectRequest();
             axios.get(`/demo/projects/${projectId}.json`)
                 .then(response => {
-                    this.props.getProjectSuccess(response.data);
-                    this.patchFormValues(response.data);
-                    // this.setState({loading: false});
+                    getProjectSuccess(response.data);
+                    patchFormValues(response.data);
                 })
                 .catch(error => {
-                    this.props.getProjectFailure(error);
-                    // this.setState({loading: false, error: 'error to show'});
+                    getProjectFailure(error);
                 });
         }
-    }
+    }, []);
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('load data from backend by project id');
-    }
-
-    patchFormValues = (project) => {
+    const patchFormValues = (project) => {
         const updatedProjectForm = {
-            ...this.state.projectForm
+            ...projectForm
         };
 
         let controlIndex = -1;
@@ -59,18 +60,18 @@ export class Project extends Component {
                 updatedProjectForm.controls[controlIndex].value = project[projectProperty];
             }
         }
-        this.setState({projectForm: updatedProjectForm});
+        setProjectForm(updatedProjectForm);
     }
 
-    inputChangedHandler = (event, controlId) => {
-        const updatedProjectForm = formControlChangeHandler(event.target.value, controlId, this.state.loginForm )
-        this.setState({projectForm: updatedProjectForm});
+    const inputChangedHandler = (event, controlId) => {
+        const updatedProjectForm = formControlChangeHandler(event.target.value, controlId, projectForm)
+        setProjectForm(updatedProjectForm);
     }
 
-    submitProjectHandler = (event) => {
+    const submitProjectHandler = (event) => {
         event.preventDefault();
         const updatedProjectForm = {
-            ...this.state.projectForm
+            ...projectForm
         };
 
         const formData = {};
@@ -93,84 +94,51 @@ export class Project extends Component {
             currentPhase: 'planning'
         }
 
-        const projectId = this.props.match.params.id;
+        const projectId = props.match.params.id;
         const crudAction = projectId ? 'put' : 'post';
         const endpointUrl = projectId ? `/demo/projects/${projectId}.json` : '/demo/projects.json';
         axios[crudAction](endpointUrl, project)
             .then(response => {
-                this.props.history.push('/projects');
+                props.history.push('/projects');
             })
             .catch(error => {
                 console.log(error);
             });
     }
 
-    render() {
-        let form = (
-            <form onSubmit={this.submitProjectHandler}>
-                {this.state.projectForm.controls.map(formControl => (
-                    <Input
-                        key={formControl.id}
-                        elementType={formControl.elementType}
-                        elementConfig={formControl.elementConfig}
-                        value={formControl.value}
-                        invalid={!formControl.valid}
-                        shouldValidate={formControl.validation}
-                        touched={formControl.touched}
-                        changed={(event) => this.inputChangedHandler(event, formControl.id)}/>
-                ))}
-                <Button btnType="Success" disabled={!this.state.projectForm.valid}
-                        clicked={this.submitProjectHandler}>ORDER</Button>
-            </form>
-        );
-        if (this.props.isProjectLoading) {
-            form = <CircularProgress/>;
-        }
+    let form = (<form onSubmit={submitProjectHandler}>
+        {projectForm.controls.map(formControl => (
+            <Input
+                key={formControl.id}
+                elementType={formControl.elementType}
+                elementConfig={formControl.elementConfig}
+                value={formControl.value}
+                invalid={!formControl.valid}
+                shouldValidate={formControl.validation}
+                touched={formControl.touched}
+                changed={(event) => inputChangedHandler(event, formControl.id)}/>
+        ))}
+        <Button btnType="Success" disabled={!projectForm.valid}
+                clicked={submitProjectHandler}>ORDER</Button>
+    </form>)
 
-        let project = null;
-        project = (
-            <div className={classes.Project}>
-                <h4>Project data</h4>
-                <p>Project id is {this.props.match.params.id}</p>
-                <form>
-                    <TextField id="outlined-basic" label="Project name" variant="outlined" size="small"/>
-                    <TextField id="outlined-basic" label="Customer" variant="outlined" size="small"/>
-                    <TextField id="outlined-basic" label="Due date" variant="outlined" size="small"/>
-                    <TextField id="outlined-basic" label="Owner" variant="outlined" size="small"/>
-                </form>
-                <Button variant="contained" color="primary"
-                        onClick={this.submitProjectHandler}>Submit</Button>
-
-                <h4>Custom FORM</h4>
-                {form}
-
-            </div>
-        );
-
-        return (
-            <React.Fragment>
-                {project}
-            </React.Fragment>
-        )
+    if (isProjectLoading) {
+        form = <CircularProgress/>;
     }
+
+    let project = null;
+    project = (
+        <div className={classes.Project}>
+            <h4>Project Edit</h4>
+            <p>Project id is {props.match.params.id}</p>
+            {form}
+        </div>
+    );
+
+    return (
+        <React.Fragment>
+            {project}
+        </React.Fragment>
+    )
 }
-
-const mapStateToProps = state => {
-    return {
-        currentProject: state.currentProject.currentProject,
-        isProjectLoading: state.currentProject.isProjectLoading,
-        error: state.currentProject.error
-    }
-};
-
-
-const mapDispatchToProps = dispatch => {
-    return {
-        getProjectRequest: () => dispatch(projectActions.getProjectRequestAction()),
-        getProjectSuccess: (project) => dispatch(projectActions.getProjectSuccessAction(project)),
-        getProjectFailure: (error) => dispatch(projectActions.getProjectFailureAction(error)),
-        // onDeleteProject: (projectId) => dispatch(projectActions.deleteProject(projectId))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(Project, axios));
+export default withErrorHandler(project, axios);

@@ -2,11 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cc650fb-a41b-4b27-a6df-8cb1e7e0749b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/features/Auth/_services/auth.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/Auth/_store/auth-store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/hooks-store/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/hooks/http-error.handler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/hooks/http.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Auth/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Auth/Logout/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Auth/Logout/Logout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Auth/_store/auth-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Auth/_store/auth-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/NavMenu/NavMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/NavMenu/NavMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Project/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Project/Project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/hoc/withErrorHandler/withErrorHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/hoc/withErrorHandler/withErrorHandler.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,30 +56,30 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/shared/UI/Spinner" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/features/Kanban" />
-      <recent name="$PROJECT_DIR$/src/shared/UI" />
-      <recent name="$PROJECT_DIR$/src/assets" />
-      <recent name="$PROJECT_DIR$/src/features/Layout" />
-      <recent name="$PROJECT_DIR$/src/features" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/features/Project" />
       <recent name="$PROJECT_DIR$/src/features/Kanban/_store" />
       <recent name="$PROJECT_DIR$/src/shared/hoc" />
       <recent name="$PROJECT_DIR$/src/shared/UI/Aux" />
       <recent name="$PROJECT_DIR$/src/shared/UI" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/shared/UI/Spinner" />
+      <recent name="$PROJECT_DIR$/src/features/Kanban" />
+      <recent name="$PROJECT_DIR$/src/shared/UI" />
+      <recent name="$PROJECT_DIR$/src/assets" />
+      <recent name="$PROJECT_DIR$/src/features/Layout" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -123,7 +135,8 @@
       <workItem from="1587316665679" duration="15283000" />
       <workItem from="1587487877850" duration="3890000" />
       <workItem from="1587903723432" duration="4000" />
-      <workItem from="1588144478346" duration="6787000" />
+      <workItem from="1588144478346" duration="19984000" />
+      <workItem from="1588423601899" duration="28127000" />
     </task>
     <task id="LOCAL-00001" summary="switch to webstorm">
       <created>1585690261567</created>
@@ -265,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587419450493</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="start refactor to hooks">
+      <created>1588273538609</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1588273538609</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,17 +307,18 @@
     <MESSAGE value="add auth" />
     <MESSAGE value="more auth contents" />
     <MESSAGE value="minor code cleaning" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor code cleaning" />
+    <MESSAGE value="start refactor to hooks" />
+    <option name="LAST_COMMIT_MESSAGE" value="start refactor to hooks" />
   </component>
   <component name="WindowStateProjectService">
     <state x="689" y="341" width="688" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587229103946">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="689" y="341" width="688" height="396" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587229103946" />
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1587419450374">
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1588273538520">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587419450374" />
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588273538520" />
     <state x="247" y="162" width="1407" height="728" key="DiffContextDialog" timestamp="1587219908276">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -307,26 +328,26 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587033416664" />
-    <state x="832" y="232" width="312" height="614" key="RollbackChangesDialog" timestamp="1587193908219">
+    <state x="832" y="232" width="312" height="614" key="RollbackChangesDialog" timestamp="1588526211512">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="832" y="232" width="312" height="614" key="RollbackChangesDialog/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587193908219" />
-    <state x="482" y="174" key="SettingsEditor" timestamp="1587397399422">
+    <state x="832" y="232" width="312" height="614" key="RollbackChangesDialog/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588526211512" />
+    <state x="482" y="174" key="SettingsEditor" timestamp="1588349301498">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="482" y="174" key="SettingsEditor/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587397399422" />
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1587419452114">
+    <state x="482" y="174" key="SettingsEditor/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588349301498" />
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1588273539970">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587419452114" />
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588273539970" />
     <state x="764" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587142952545">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="764" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587142952545" />
-    <state x="641" y="278" width="863" height="590" key="find.popup" timestamp="1588149275727">
+    <state x="641" y="278" width="863" height="590" key="find.popup" timestamp="1588534778673">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="641" y="278" width="863" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588149275727" />
+    <state x="641" y="278" width="863" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588534778673" />
     <state x="653" y="332" width="670" height="413" key="git4idea.merge.GitPullDialog" timestamp="1586692091469">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

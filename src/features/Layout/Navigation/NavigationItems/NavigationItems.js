@@ -4,13 +4,15 @@ import classes from './NavigationItems.css';
 
 import NavigationItem from './NavigationItem/NavigationItem';
 
-const navigationItems = (props) => (
-    <ul className={classes.NavigationItems}>
+const navigationItems = (props) => {
+    return (<ul className={classes.NavigationItems}>
         {props.isAuthenticated ?
             <React.Fragment>
                 <NavigationItem link={{pathname: '/'}} clicked={props.clicked}
                                 exact>Projects</NavigationItem>
-                <NavigationItem link={{pathname: '/projects/create', hash: '#submit', search: '?quick-submit=true'}}
+                {/*<NavigationItem link={{pathname: '/projects/create', hash: '#submit', search: '?quick-submit=true'}}*/}
+                {/*                clicked={props.clicked}*/}
+                <NavigationItem link={{pathname: '/projects/create'}}
                                 clicked={props.clicked}
                                 exact>Add Project</NavigationItem>
                 <NavigationItem link={{pathname: '/auth/logout'}}
@@ -24,12 +26,10 @@ const navigationItems = (props) => (
                 <NavigationItem link={{pathname: '/auth/signin'}}
                                 clicked={props.clicked}
                                 exact>Signin</NavigationItem>
-                <NavigationItem link={{pathname: '/auth/signup'}}
-                                clicked={props.clicked}
-                                exact>Signup</NavigationItem>
             </React.Fragment>
             : null}
-    </ul>
-);
+    </ul>)
+}
+
 
 export default navigationItems;

@@ -1,28 +1,14 @@
-import React, {Component} from 'react';
-import * as authActions from '../_store/auth-actions';
-import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
+import { useStore } from '../../../shared/hooks-store/store';
 
-class Logout extends Component {
-
-    componentDidMount() {
-        // const history = useHistory();
-        // console.log(history);
-        console.log(this.props);
-        this.props.onLogout();
+const logout = (props) => {
+    const dispatch = useStore()[1];
+    useEffect(() => {
+        dispatch('AUTH_CLEAR');
         localStorage.removeItem('auth');
-    }
-
-    render () {
-        // return <div>{this.props.pathBeforeLogout}</div>;
-        return <Redirect to="/auth/signin" />;
-    }
+    }, []);
+    return <Redirect to='/auth/signin'/>;
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onLogout: (pathBeforeLogout) => dispatch(authActions.authLogoutAction(pathBeforeLogout)),
-    }
-}
-
-export default connect(null, mapDispatchToProps)(Logout);
+export default logout;

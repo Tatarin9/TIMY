@@ -1,11 +1,9 @@
 import React from 'react';
 
-import classes from './Column.css';
-// import appClasses from '../../../App.css';
-
-import KanbanTicket from '../Ticket/Ticket';
-// import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
+
+import classes from './Column.css';
+import KanbanTicket from '../Ticket/Ticket';
 
 const kanbanColumn = (props) => {
 
