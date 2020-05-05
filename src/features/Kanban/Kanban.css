@@ -1,4 +1,9 @@
 
+.Filters {
+    display: flex;
+    justify-content: space-between;
+}
+
 .Kanban {
     width: 100%;
     overflow: auto;
@@ -7,12 +12,10 @@
     display: flex;
     /*width: fit-content;*/
     /*margin: 0 auto;*/
-
 }
 
-.Filters {
-    display: flex;
-    justify-content: space-between;
+.SpinnerWrapper {
+    text-align: center;
 }
 
 .SkeletonColumn {

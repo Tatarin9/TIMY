@@ -8,7 +8,7 @@ import Input from '../../shared/UI/Input/Input';
 import Button from '../../shared/UI/Button/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import * as projectActions from './_store/project-actions';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const project = props => {
 
@@ -26,11 +26,7 @@ const project = props => {
     const getProjectSuccess = (project) => dispatch(projectActions.getProjectSuccessAction(project));
     const getProjectFailure = (error) => dispatch(projectActions.getProjectFailureAction(error));
 
-
-    const currentProject = useSelector(state => state.currentProject.currentProject);
     const isProjectLoading = useSelector(state => state.currentProject.isProjectLoading);
-    const error = useSelector(state => state.currentProject.error);
-
 
     // send request only on first render (pass [] in useEffect arguments)
     useEffect(() => {

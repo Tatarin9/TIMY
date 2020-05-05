@@ -8,7 +8,8 @@ import IconButton from '@material-ui/core/IconButton';
 import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import ForwardOutlinedIcon from '@material-ui/icons/ForwardOutlined'
-import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
+import VisibilityOutlineindexdIcon from '@material-ui/icons/VisibilityOutlined';
+import { withRouter } from 'react-router';
 
 const kanbanTicket = React.memo((props) => {
     const ticketState = useState({projectStatus: null});
@@ -17,6 +18,12 @@ const kanbanTicket = React.memo((props) => {
     const actualPercent = props.project.actualHours / maxHours * 100 + '%';
     const budgetPercent = props.project.budgetHours / maxHours * 100 + '%';
     const issuedPercent = props.project.issuedHours / maxHours * 100 + '%';
+
+    const editProjectHandler = () => {
+        props.history.push({
+            pathname: '/projects/' + props.project.id
+        });
+    }
 
     return (
         <React.Fragment>
@@ -57,7 +64,7 @@ const kanbanTicket = React.memo((props) => {
                         </Grid>
                         <Grid item>
                             <Tooltip title="Edit">
-                                <IconButton aria-label="edit" style={{'padding': '5px'}} onClick={props.currentTicket}>
+                                <IconButton aria-label="edit" style={{'padding': '5px'}} onClick={editProjectHandler}>
                                     <EditOutlinedIcon fontSize="small" style={{'fontSize': '1.1rem'}}/>
                                 </IconButton>
                             </Tooltip>
@@ -85,4 +92,4 @@ const kanbanTicket = React.memo((props) => {
 
 });
 
-export default kanbanTicket;
+export default withRouter(kanbanTicket);
