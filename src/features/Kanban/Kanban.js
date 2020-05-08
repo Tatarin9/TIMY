@@ -12,10 +12,22 @@ import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler
 // import Box from '@material-ui/core/Box';
 import LoadSpinner from '../../shared/UI/LoadSpinner/LoadSpinner';
 import { setFormControl } from '../../shared/FormHelpers';
+import useHttp from '../../shared/hooks/http';
 
 const kanban = props => {
     const [kanbanColumns, setKanbanColumns] = useState([]);
     const [projects, setProjects] = useState([]);
+
+    const {
+        isLoading,
+        error,
+        data,
+        sendRequest,
+        reqExtra,
+        reqIdentifer,
+        clear
+    } = useHttp();
+
     // state = {
     //     kanbanColumns: [],
     //     projects: [],

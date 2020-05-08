@@ -1,14 +1,10 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { formControlChangeHandler, getFormControlValueById, setFormControl } from '../../shared/FormHelpers';
 import Input from '../../shared/UI/Input/Input';
 import Button from '../../shared/UI/Button/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import classes from '../Project/Project.css';
-import TextField from '@material-ui/core/TextField';
-import { connect } from 'react-redux';
 import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
 import axios from 'axios';
-import * as authActions from './_store/auth-actions';
 import { Redirect } from 'react-router-dom';
 import { useStore } from '../../shared/hooks-store/store';
 
@@ -31,8 +27,6 @@ const auth = props => {
     const [isSignup, setIsSignup] = useState(false);
 
     const [state, dispatch] = useStore();
-    // console.log('auth');
-    // console.log(state.authData);
 
     useEffect(() => {
         if (props.location.pathname === '/auth/signup') {
@@ -57,7 +51,6 @@ const auth = props => {
             password: getFormControlValueById(loginForm, 'password'),
             returnSecureToken: true
         }
-        // props.authRequest();
         const methodParam = isSignup ? 'signUp' : 'signInWithPassword';
         setTimeout( () => {
             axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:${methodParam}?key=AIzaSyAVVqYQhmq2ItJXERsC_qrmg-LRsfrH-Fw`, authPayload)
@@ -65,14 +58,11 @@ const auth = props => {
                     const authData = {...response.data};
                     const expiresAt = new Date(new Date().getTime() + authData.expiresIn * 1000);
                     authData.expiresAt = expiresAt;
-                    // props.authSuccess(authData);
-
                     dispatch('AUTH_SUCCESS', authData);
                     localStorage.setItem('auth', JSON.stringify(authData));
                     props.history.push('/');
                 })
                 .catch(error => {
-                    // props.authFailure(error);
                     dispatch('AUTH_FAILURE', error);
                 });
         }, 2000);
@@ -111,24 +101,4 @@ const auth = props => {
         </React.Fragment>
     )
 }
-
-const mapStateToProps = state => {
-    return {
-        authData: state.auth.authData,
-        isLoading: state.auth.isLoading,
-        error: state.auth.error
-    }
-};
-
-
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         authRequest: () => dispatch(authActions.authRequestAction()),
-//         authSuccess: (auth) => dispatch(authActions.authSuccessAction(auth)),
-//         authFailure: (error) => dispatch(authActions.authFailureAction(error)),
-//         // onDeleteProject: (projectId) => dispatch(projectActions.deleteProject(projectId))
-//     }
-// }
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(auth, axios));
 export default withErrorHandler(auth, axios);

@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cc650fb-a41b-4b27-a6df-8cb1e7e0749b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/shared/UI/LoadSpinner/LoadSpinner.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Auth/_store/auth-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Auth/_store/auth-store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Auth/Auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Project/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Project/Project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/UI/PageNotFound/PageNotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/PageNotFound/PageNotFound.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/UI/Spinner/LoadingIndicator.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/LoadSpinner/LoadSpinner.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/UI/Spinner/LoadingIndicator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/UI/Spinner/Spinner.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/LoadSpinner/Spinner.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/UI/Spinner/Spinner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/LoadSpinner/Spinner.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +41,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/shared/UI/Spinner" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -132,7 +122,11 @@
       <workItem from="1587903723432" duration="4000" />
       <workItem from="1588144478346" duration="19984000" />
       <workItem from="1588423601899" duration="29317000" />
-      <workItem from="1588609327769" duration="7043000" />
+      <workItem from="1588609327769" duration="8339000" />
+      <workItem from="1588684838163" duration="1458000" />
+      <workItem from="1588752032847" duration="599000" />
+      <workItem from="1588790010877" duration="29000" />
+      <workItem from="1588964236800" duration="1968000" />
     </task>
     <task id="LOCAL-00001" summary="switch to webstorm">
       <created>1585690261567</created>
@@ -295,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588572932910</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="code cleaning">
+      <created>1588665701153</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1588665701153</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,17 +321,18 @@
     <MESSAGE value="start refactor to hooks" />
     <MESSAGE value="cont. refactor to hooks" />
     <MESSAGE value="auth hook working" />
-    <option name="LAST_COMMIT_MESSAGE" value="auth hook working" />
+    <MESSAGE value="code cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="code cleaning" />
   </component>
   <component name="WindowStateProjectService">
     <state x="689" y="341" width="688" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587229103946">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="689" y="341" width="688" height="396" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587229103946" />
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1588572932816">
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1588665701017">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588572932816" />
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588665701017" />
     <state x="247" y="162" width="1407" height="728" key="DiffContextDialog" timestamp="1587219908276">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -348,18 +350,18 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="174" key="SettingsEditor/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588349301498" />
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1588572934139">
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1588665702591">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588572934139" />
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588665702591" />
     <state x="764" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587142952545">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="764" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587142952545" />
-    <state x="454" y="278" width="1050" height="590" key="find.popup" timestamp="1588664507671">
+    <state x="454" y="278" width="1050" height="590" key="find.popup" timestamp="1588713118717">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="454" y="278" width="1050" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588664507671" />
+    <state x="454" y="278" width="1050" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588713118717" />
     <state x="653" y="332" width="670" height="413" key="git4idea.merge.GitPullDialog" timestamp="1586692091469">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
