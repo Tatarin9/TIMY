@@ -4,7 +4,9 @@
     <list default="true" id="3cc650fb-a41b-4b27-a6df-8cb1e7e0749b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Auth/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/hoc/withErrorHandler/withErrorHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/hoc/withErrorHandler/withErrorHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/hooks/http-error.handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/hooks/http-error.handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/hooks/http.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/hooks/http.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +43,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Desktop/react course/A-hooks-burger-08-finished" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -126,7 +128,7 @@
       <workItem from="1588684838163" duration="1458000" />
       <workItem from="1588752032847" duration="599000" />
       <workItem from="1588790010877" duration="29000" />
-      <workItem from="1588964236800" duration="1968000" />
+      <workItem from="1588964236800" duration="13573000" />
     </task>
     <task id="LOCAL-00001" summary="switch to webstorm">
       <created>1585690261567</created>
@@ -296,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588665701153</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="code cleaning">
+      <created>1588966881692</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1588966881693</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,19 +338,19 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="689" y="341" width="688" height="396" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587229103946" />
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1588665701017">
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1588966881634">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588665701017" />
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588966881634" />
     <state x="247" y="162" width="1407" height="728" key="DiffContextDialog" timestamp="1587219908276">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="2106" y="138" width="1457" height="746" key="DiffContextDialog/1920.0.1920.1080/67.27.1853.1053@1920.0.1920.1080" timestamp="1585690133648" />
     <state x="247" y="162" width="1407" height="728" key="DiffContextDialog/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587219908276" />
-    <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587033416664">
+    <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1589035700087">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587033416664" />
+    <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589035700087" />
     <state x="832" y="232" width="312" height="614" key="RollbackChangesDialog" timestamp="1588526211512">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -350,18 +359,18 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="174" key="SettingsEditor/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588349301498" />
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1588665702591">
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1588966883320">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588665702591" />
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588966883320" />
     <state x="764" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587142952545">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="764" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587142952545" />
-    <state x="454" y="278" width="1050" height="590" key="find.popup" timestamp="1588713118717">
+    <state x="454" y="278" width="1050" height="590" key="find.popup" timestamp="1589036626184">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="454" y="278" width="1050" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588713118717" />
+    <state x="454" y="278" width="1050" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589036626184" />
     <state x="653" y="332" width="670" height="413" key="git4idea.merge.GitPullDialog" timestamp="1586692091469">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -370,5 +379,9 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="657" y="246" key="run.anything.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1586283804390" />
+    <state x="656" y="237" width="672" height="678" key="search.everywhere.popup" timestamp="1589033215927">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="656" y="237" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589033215927" />
   </component>
 </project>

@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { formControlChangeHandler, getFormControlValueById, setFormControl } from '../../shared/FormHelpers';
 import Input from '../../shared/UI/Input/Input';
 import Button from '../../shared/UI/Button/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
-import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { useStore } from '../../shared/hooks-store/store';
+import useHttp from '../../shared/hooks/http';
 
 const auth = props => {
 
@@ -28,6 +27,16 @@ const auth = props => {
 
     const [state, dispatch] = useStore();
 
+    const {
+        isLoading,
+        error,
+        data,
+        sendRequest,
+        reqExtra,
+        reqIdentifer,
+        clear
+    } = useHttp();
+
     useEffect(() => {
         if (props.location.pathname === '/auth/signup') {
             setIsSignup(true);
@@ -37,12 +46,29 @@ const auth = props => {
         }
     }, [setIsSignup]);
 
+
+    // listen
+    useEffect(() => {
+        if (!isLoading && !error && data) {
+            const authData = {...data.data};
+            const expiresAt = new Date(new Date().getTime() + authData.expiresIn * 1000);
+            authData.expiresAt = expiresAt;
+            dispatch('AUTH_SUCCESS', authData);
+            localStorage.setItem('auth', JSON.stringify(authData));
+            props.history.push('/');
+        }
+        if (error) {
+            dispatch('AUTH_FAILURE', error);
+            alert('show error:' + error ? error.data.error.message : 'Server error occured');
+        }
+    }, [data, isLoading, error]);
+
     const inputChangedHandler = (event, controlId) => {
         const updatedLoginForm = formControlChangeHandler(event.target.value, controlId, loginForm)
         setLoginForm(updatedLoginForm);
     }
 
-    const submitAuthHandler = (event) => {
+    const submitAuthHandler = useCallback(event => {
         event.preventDefault();
         dispatch('AUTH_REQUEST');
 
@@ -52,21 +78,15 @@ const auth = props => {
             returnSecureToken: true
         }
         const methodParam = isSignup ? 'signUp' : 'signInWithPassword';
-        setTimeout( () => {
-            axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:${methodParam}?key=AIzaSyAVVqYQhmq2ItJXERsC_qrmg-LRsfrH-Fw`, authPayload)
-                .then(response => {
-                    const authData = {...response.data};
-                    const expiresAt = new Date(new Date().getTime() + authData.expiresIn * 1000);
-                    authData.expiresAt = expiresAt;
-                    dispatch('AUTH_SUCCESS', authData);
-                    localStorage.setItem('auth', JSON.stringify(authData));
-                    props.history.push('/');
-                })
-                .catch(error => {
-                    dispatch('AUTH_FAILURE', error);
-                });
-        }, 2000);
-    }
+
+        sendRequest(
+            `https://identitytoolkit.googleapis.com/v1/accounts:${methodParam}?key=AIzaSyAVVqYQhmq2ItJXERsC_qrmg-LRsfrH-Fw`,
+            'post',
+            authPayload,
+            null,
+            null
+        );
+    }, []);
 
     let loginFormJsx = (
         <form onSubmit={submitAuthHandler}>
@@ -101,4 +121,5 @@ const auth = props => {
         </React.Fragment>
     )
 }
-export default withErrorHandler(auth, axios);
+// export default withErrorHandler(auth, axios);
+export default auth;

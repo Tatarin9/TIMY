@@ -4,7 +4,6 @@ import useHttpErrorHandler from '../../hooks/http-error.handler';
 
 const withErrorHandler = (WrappedComponent, axios) => {
     return props => {
-
         const [error, clearError] = useHttpErrorHandler(axios);
 
         return (
@@ -17,7 +16,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
                     open={!!error}
                     onClose={() => {clearError}}
                     autoHideDuration={5000}
-                    message={error ? error.statusText : null}
+                    message={error ? error.message : null}
                 />
                 <WrappedComponent {...props}/>
             </React.Fragment>

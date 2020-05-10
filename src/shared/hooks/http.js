@@ -1,4 +1,5 @@
 import { useReducer, useCallback } from 'react';
+import axios from '../../axios';
 
 const initialState = {
     loading: false,
@@ -26,7 +27,7 @@ const httpReducer = (curHttpState, action) => {
                 extra: action.extra
             };
         case 'ERROR':
-            return { loading: false, error: action.errorMessage };
+            return {loading: false, error: action.errorMessage};
         case 'CLEAR':
             return initialState;
         default:
@@ -37,37 +38,26 @@ const httpReducer = (curHttpState, action) => {
 const useHttp = () => {
     const [httpState, dispatchHttp] = useReducer(httpReducer, initialState);
 
-    const clear = useCallback(() => dispatchHttp({ type: 'CLEAR' }), []);
+    const clear = useCallback(() => dispatchHttp({type: 'CLEAR'}), []);
 
     const sendRequest = useCallback(
-        (url, method, body, reqExtra, reqIdentifer) => {
-            dispatchHttp({ type: 'SEND', identifier: reqIdentifer });
-            fetch(url, {
-                method: method,
-                body: body,
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
+        (url, method, payload, reqExtra, reqIdentifer) => {
+            dispatchHttp({type: 'SEND', identifier: reqIdentifer});
+            axios[method](url, payload)
                 .then(response => {
-                    return response.json();
-                })
-                .then(responseData => {
                     dispatchHttp({
                         type: 'RESPONSE',
-                        responseData: responseData,
+                        responseData: response,
                         extra: reqExtra
                     });
                 })
                 .catch(error => {
                     dispatchHttp({
                         type: 'ERROR',
-                        errorMessage: 'Something went wrong!'
+                        errorMessage: error
                     });
                 });
-        },
-        []
-    );
+        }, []);
 
     return {
         isLoading: httpState.loading,

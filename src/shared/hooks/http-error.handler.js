@@ -2,7 +2,6 @@ import {useEffect, useState} from 'react';
 
 export default httpClient => {
     const [error, setError] = useState(null);
-
 // clear error when request is fired
     const reqInterceptor = httpClient.interceptors.request.use(request => {
         setError(null);
@@ -28,6 +27,5 @@ export default httpClient => {
     }
 
     return [error, errorConfirmedHandler];
-
 }
 
