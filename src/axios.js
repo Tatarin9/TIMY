@@ -11,11 +11,9 @@ instance.interceptors.request.use(request => {
         // check if has query param, then add auth=token
         request.url = request.url.includes('?') ? `${request.url}&auth=${authData.idToken}` : `${request.url}?auth=${authData.idToken}`;
     }
-    // console.log(request);
     // edit then return request
     return request;
 }, error => {
-    // console.log(error);
     // handle the error in the component that sent the request
     return Promise.reject(error);
 });
@@ -25,7 +23,6 @@ instance.interceptors.response.use(response => {
     // console.log(response);
     return response;
 }, error => {
-    // console.log(error.response);
     if (401 === error.response.status) {
         // auto logout if 401 response returned from api
         window.location = '/auth/signin';

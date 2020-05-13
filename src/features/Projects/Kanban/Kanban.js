@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import axios from '../../axios';
+import axios from '../../../axios';
 
 import KanbanColumn from './Column/Column';
 
 // import appClasses from '../../App.css';
 import classes from './Kanban.css';
 
-import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
+import withErrorHandler from '../../../shared/hoc/withErrorHandler/withErrorHandler';
 // import Button from '@material-ui/core/Button';
 // import Skeleton from '@material-ui/lab/Skeleton';
 // import Box from '@material-ui/core/Box';
-import LoadSpinner from '../../shared/UI/LoadSpinner/LoadSpinner';
-import { setFormControl } from '../../shared/FormHelpers';
-import useHttp from '../../shared/hooks/http';
+import LoadSpinner from '../../../shared/UI/LoadSpinner/LoadSpinner';
+import { setFormControl } from '../../../shared/FormHelpers';
+import useHttp from '../../../shared/hooks/http';
 
 const kanban = props => {
     const [kanbanColumns, setKanbanColumns] = useState([]);

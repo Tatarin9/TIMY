@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 
+import appClasses from '../../../../App.css';
 import classes from './Ticket.css';
-import Button from '../../../shared/UI/Button/Button';
+import Button from '../../../../shared/UI/Button/Button';
 import Grid from '@material-ui/core/Grid';
 import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';

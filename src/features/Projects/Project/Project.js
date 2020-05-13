@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import axios from '../../axios';
+import axios from '../../../axios';
 
 import classes from './Project.css';
-import withErrorHandler from '../../shared/hoc/withErrorHandler/withErrorHandler';
-import { setFormControl, formControlChangeHandler } from '../../shared/FormHelpers';
-import Input from '../../shared/UI/Input/Input';
-import Button from '../../shared/UI/Button/Button';
+import withErrorHandler from '../../../shared/hoc/withErrorHandler/withErrorHandler';
+import { setFormControl, formControlChangeHandler } from '../../../shared/FormHelpers';
+import Input from '../../../shared/UI/Input/Input';
+import Button from '../../../shared/UI/Button/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import * as projectActions from './_store/project-actions';
 import { useDispatch, useSelector } from 'react-redux';

@@ -1,8 +1,10 @@
 .Column {
     flex-grow: 1;
     flex-basis: 0;
-    min-height: 90vh;
+    min-height: calc(90vh - 70px);
+    min-width: 11rem;
     border: solid 1px #ccc;
+    margin-bottom: 1rem;
 }
 
 .Column:not(:last-child) {

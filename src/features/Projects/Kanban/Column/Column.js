@@ -1,22 +1,20 @@
 import React from 'react';
 
-import Grid from '@material-ui/core/Grid';
+import KanbanTicket from '../Ticket/Ticket';
 
 import classes from './Column.css';
-import KanbanTicket from '../Ticket/Ticket';
+import appClasses from '../../../../App.css';
 
 const kanbanColumn = (props) => {
 
     const columnTitle = (
-        <Grid container justify="space-between" className={classes.TitleWrap}>
-            <Grid item>
-                <Grid container>
-                    <div className={classes.ColumnTag} style={{'background': props.color}}/>
-                    <div>{props.title}</div>
-                </Grid>
-            </Grid>
-            <Grid item style={{'marginRight': '0.5rem'}}>{props.projects.length}</Grid>
-        </Grid>
+        <div className={[appClasses.flex, appClasses.spaceBetween, classes.TitleWrap].join(' ')}>
+            <div className={[appClasses.flex, appClasses.flexStart].join(' ')}>
+                <div className={classes.ColumnTag} style={{'background': props.color}}/>
+                <div>{props.title}</div>
+            </div>
+            <div style={{'marginRight': '0.5rem'}}>{props.projects.length}</div>
+        </div>
     );
 
     const columnTickets =

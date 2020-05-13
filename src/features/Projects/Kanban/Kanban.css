@@ -10,7 +10,6 @@
     white-space: nowrap;
     position: relative;
     display: flex;
-    /*width: fit-content;*/
     /*margin: 0 auto;*/
 }
 
@@ -18,19 +17,19 @@
     text-align: center;
 }
 
-.SkeletonColumn {
-    display: inline-block;
-    width: 200px;
-    margin: 0 0.5rem;
-    min-height: calc(90vh - 100px);
-}
+/*.SkeletonColumn {*/
+/*    display: inline-block;*/
+/*    width: 200px;*/
+/*    margin: 0 0.5rem;*/
+/*    min-height: calc(90vh - 100px);*/
+/*}*/
 
 /*@media (min-width: 1000px) and (min-height: 700px) {*/
 @media (min-width: 1000px) {
     .Kanban {
         /*width: 700px;*/
         /*height: 600px;*/
-        justify-content: center;
+        /*justify-content: center;*/
     }
 }
 

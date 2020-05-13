@@ -5,7 +5,7 @@ import SideDrawer from './Navigation/SideDrawer/SideDrawer';
 
 import classes from './Layout.css';
 import { Route, Switch } from 'react-router-dom';
-import Kanban from '../Kanban/Kanban';
+import Kanban from '../Projects/Kanban/Kanban';
 import PageNotFound from '../../shared/UI/PageNotFound/PageNotFound';
 import Auth from '../Auth/Auth';
 import Logout from '../Auth/Logout/Logout';
@@ -13,7 +13,7 @@ import { withRouter } from 'react-router-dom';
 import { useStore } from '../../shared/hooks-store/store';
 
 // import Project from '../Project/Project';
-const Project = React.lazy(() => import('../Project/Project'));
+const Project = React.lazy(() => import('../Projects/Project/Project'));
 
 const layout = props => {
     const [isSideDrawerVisible, setSideDrawerVisibility] = useState(false);
