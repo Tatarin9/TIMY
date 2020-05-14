@@ -3,25 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="3cc650fb-a41b-4b27-a6df-8cb1e7e0749b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/axios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Auth/_services/auth.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Auth/_store/auth-actions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Auth/_store/auth-reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Column/Column.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Column/Column.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Column/Column.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Column/Column.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Kanban.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Kanban.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Ticket/Ticket.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Kanban/Ticket/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Ticket/Ticket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Auth/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Auth/Logout/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Auth/Logout/Logout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Project/Project.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Project/Project.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Project/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Project/Project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Project/Project.test.js.TBD" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Project/Project.test.js.TBD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Project/_store/project-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Project/_store/project-actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Project/_store/project-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Project/_store/project-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/hoc/Aux/Aux.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/NavMenu/NavMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/NavMenu/NavMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/SideDrawer/SideDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/SideDrawer/SideDrawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Projects/Kanban/Column/Column.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Column/Column.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Projects/Kanban/Kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Kanban.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Projects/Kanban/Ticket/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Ticket/Ticket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Projects/Project/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Project/Project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Projects/Project/_store/project-actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Projects/Project/_store/project-reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/hoc/withErrorHandler/withErrorHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/hoc/withErrorHandler/withErrorHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/hooks-store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/hooks-store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/_store/projects-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducer.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,19 +68,19 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/features/Project" />
-      <recent name="$PROJECT_DIR$/src/features/Kanban/_store" />
-      <recent name="$PROJECT_DIR$/src/shared/hoc" />
-      <recent name="$PROJECT_DIR$/src/shared/UI/Aux" />
-      <recent name="$PROJECT_DIR$/src/shared/UI" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/shared/UI/Spinner" />
       <recent name="$PROJECT_DIR$/src/features/Kanban" />
       <recent name="$PROJECT_DIR$/src/shared/UI" />
       <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/features/Layout" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/features/Projects" />
+      <recent name="$PROJECT_DIR$/src/features/Project" />
+      <recent name="$PROJECT_DIR$/src/features/Kanban/_store" />
+      <recent name="$PROJECT_DIR$/src/shared/hoc" />
+      <recent name="$PROJECT_DIR$/src/shared/UI/Aux" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -144,7 +143,7 @@
       <workItem from="1588752032847" duration="599000" />
       <workItem from="1588790010877" duration="29000" />
       <workItem from="1588964236800" duration="13899000" />
-      <workItem from="1589382050536" duration="6710000" />
+      <workItem from="1589382050536" duration="23969000" />
     </task>
     <task id="LOCAL-00001" summary="switch to webstorm">
       <created>1585690261567</created>
@@ -328,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589087488103</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="minor changes">
+      <created>1589396553259</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1589396553260</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,22 +361,23 @@
     <MESSAGE value="auth hook working" />
     <MESSAGE value="code cleaning" />
     <MESSAGE value="add http hook for auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="add http hook for auth" />
+    <MESSAGE value="minor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor changes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="689" y="341" width="688" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587229103946">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="689" y="341" width="688" height="396" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587229103946" />
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1589087488012">
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1589396553179">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589087488012" />
-    <state x="247" y="162" width="1407" height="728" key="DiffContextDialog" timestamp="1587219908276">
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589396553179" />
+    <state x="247" y="162" width="1407" height="728" key="DiffContextDialog" timestamp="1589467982943">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="2106" y="138" width="1457" height="746" key="DiffContextDialog/1920.0.1920.1080/67.27.1853.1053@1920.0.1920.1080" timestamp="1585690133648" />
-    <state x="247" y="162" width="1407" height="728" key="DiffContextDialog/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587219908276" />
+    <state x="247" y="162" width="1407" height="728" key="DiffContextDialog/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589467982943" />
     <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1589035700087">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -383,18 +390,18 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="174" key="SettingsEditor/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588349301498" />
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589087489862">
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589396554473">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589087489862" />
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589396554473" />
     <state x="764" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587142952545">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="764" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587142952545" />
-    <state x="762" y="247" width="1050" height="590" key="find.popup" timestamp="1589393371462">
+    <state x="762" y="247" width="1050" height="590" key="find.popup" timestamp="1589452121382">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="762" y="247" width="1050" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589393371462" />
+    <state x="762" y="247" width="1050" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589452121382" />
     <state x="653" y="332" width="670" height="413" key="git4idea.merge.GitPullDialog" timestamp="1586692091469">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

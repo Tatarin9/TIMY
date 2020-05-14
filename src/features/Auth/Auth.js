@@ -1,14 +1,15 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { formControlChangeHandler, getFormControlValueById, setFormControl } from '../../shared/FormHelpers';
-import Input from '../../shared/UI/Input/Input';
-import Button from '../../shared/UI/Button/Button';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import { Redirect } from 'react-router-dom';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 import { useStore } from '../../shared/hooks-store/store';
 import useHttp from '../../shared/hooks/http';
 
-const auth = props => {
+import { formControlChangeHandler, getFormControlValueById, setFormControl } from '../../shared/FormHelpers';
+import Input from '../../shared/UI/Input/Input';
+import Button from '../../shared/UI/Button/Button';
 
+const auth = props => {
     const [loginForm, setLoginForm] = useState({
         controls: [
             setFormControl('email', 'email', 'input', 'text', 'Email', '', {

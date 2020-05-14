@@ -30,12 +30,10 @@ const kanbanColumn = (props) => {
         });
 
     return (
-        <React.Fragment>
-            <div className={classes.Column}>
-                {columnTitle}
-                {columnTickets}
-            </div>
-        </React.Fragment>
+        <div className={classes.Column}>
+            {columnTitle}
+            {columnTickets}
+        </div>
     );
 
 };

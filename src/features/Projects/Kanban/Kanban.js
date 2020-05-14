@@ -1,80 +1,92 @@
-import React, { useEffect, useState } from 'react';
-import axios from '../../../axios';
+import React, { useCallback, useEffect } from 'react';
+
+import useHttp from '../../../shared/hooks/http';
+import { useStore } from '../../../shared/hooks-store/store';
 
 import KanbanColumn from './Column/Column';
+import LoadSpinner from '../../../shared/UI/LoadSpinner/LoadSpinner';
 
 // import appClasses from '../../App.css';
 import classes from './Kanban.css';
 
-import withErrorHandler from '../../../shared/hoc/withErrorHandler/withErrorHandler';
-// import Button from '@material-ui/core/Button';
-// import Skeleton from '@material-ui/lab/Skeleton';
-// import Box from '@material-ui/core/Box';
-import LoadSpinner from '../../../shared/UI/LoadSpinner/LoadSpinner';
-import { setFormControl } from '../../../shared/FormHelpers';
-import useHttp from '../../../shared/hooks/http';
-
 const kanban = props => {
-    const [kanbanColumns, setKanbanColumns] = useState([]);
-    const [projects, setProjects] = useState([]);
+    const [state, dispatch] = useStore();
 
-    const {
-        isLoading,
-        error,
-        data,
-        sendRequest,
-        reqExtra,
-        reqIdentifer,
-        clear
-    } = useHttp();
+    const projects = useHttp();
+    const columns = useHttp();
 
-    // state = {
-    //     kanbanColumns: [],
-    //     projects: [],
-    //     isTicketClicked: false,
-    //     currentTicket: null,
-    //     currentProject: null,
-    //     otherState: 'some other value',
-    //     loading: false,
-    //     error: null
-    // };
-
+    // listen kanban columns
     useEffect(() => {
-        axios.get('/demo/kanbanColumns.json')
-            .then(response => {
-                const columns = Array.isArray(response.data) ? response.data : response.data[Object.keys(response.data)];
-                setKanbanColumns(columns);
-            })
-            .catch(error => {
-                // console.log(error);
-            });
+        if (!columns.isLoading && !columns.error && columns.data) {
+            const columnsRes = Array.isArray(columns.data.data) ? columns.data.data : columns.data.data[Object.keys(columns.data.data)];
+            dispatch('FETCH_COLUMNS_SUCCESS', columnsRes);
+        }
+        if (columns.error) {
+            dispatch('FETCH_COLUMNS_FAILURE', columns.error);
+            alert('show error:' + columns.error ? columns.error.data.error.message : 'Server error occured');
+        }
+    }, [columns.data, columns.isLoading, columns.error]);
 
-        axios.get('/demo/projects.json')
-            .then(res => {
-                const projects = [];
-                for (let key in res.data) {
-                    projects.push({
-                        ...res.data[key],
-                        id: key
-                    })
-                }
-                setProjects(projects);
-            })
-            .catch(error => {
-                // console.log(error);
-                // this.setState({loading: false, error: 'error to show'});
-            });
+
+    // listen projects
+    useEffect(() => {
+        if (!projects.isLoading && !projects.error && projects.data) {
+            const projectsRes = [];
+            for (let key in projects.data.data) {
+                projectsRes.push({
+                    ...projects.data.data[key],
+                    id: key
+                })
+            }
+            dispatch('FETCH_PROJECTS_SUCCESS', projectsRes);
+        }
+        if (projects.error) {
+            dispatch('FETCH_PROJECTS_FAILURE', projects.error);
+            alert('show error:' + projects.error ? projects.error.data.error.message : 'Server error occured');
+        }
+    }, [projects.data, projects.isLoading, projects.error]);
+
+    const fetchProjects = useCallback(() => {
+        dispatch('FETCH_PROJECTS_REQUEST');
+        projects.sendRequest(
+            '/demo/projects.json',
+            'get',
+            null,
+            null,
+            null
+        );
+    }, [dispatch, projects.sendRequest]);
+
+    // fetch projects
+    useEffect(() => {
+        fetchProjects();
     }, []);
 
-    let columns = null;
-    if (kanbanColumns.length > 0 && projects.length > 0) {
-        columns = kanbanColumns.map((column, index) => {
+    const fetchColumns = useCallback(() => {
+        dispatch('FETCH_COLUMNS_REQUEST');
+        columns.sendRequest(
+            '/demo/kanbanColumns.json',
+            'get',
+            null,
+            null,
+            null
+        );
+    }, [dispatch, columns.sendRequest]);
+
+    // fetch columns
+    useEffect(() => {
+        fetchColumns();
+    }, []);
+
+    let columnsJsx = null;
+    if (state.columnsData != null && state.projectsData != null) {
+        columnsJsx = state.columnsData.map((column, index) => {
             return <KanbanColumn
                 columnNumber={index + 1}
-                totalColumns={kanbanColumns.length}
+                totalColumns={state.columnsData.length}
                 title={column.title}
                 color={column.color}
-                projects={projects.filter(project => project.status === column.status)}
+                projects={state.projectsData.filter(project => project.status === column.status)}
                 key={column.id}
             />
         });
@@ -99,13 +111,13 @@ const kanban = props => {
         <React.Fragment>
             <h2>Projects status board</h2>
             {filters}
-            {projects.length > 0 ?
+            {state.projectsData ?
                 <div className={classes.Kanban}>
-                    {columns}
+                    {columnsJsx}
                 </div>
                 : spinner}
         </React.Fragment>
     )
 }
 
-export default withErrorHandler(kanban, axios);
+export default kanban;

@@ -7,6 +7,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 import configureAuthStore from './features/Auth/_store/auth-store';
+import configureProjectsStore from './features/Projects/_store/projects-store';
 
 // import axios from 'axios';
 //
@@ -38,6 +39,7 @@ import configureAuthStore from './features/Auth/_store/auth-store';
 // const store = createStore();
 
 configureAuthStore();
+configureProjectsStore();
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

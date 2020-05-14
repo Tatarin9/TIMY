@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from 'react';
+import React from 'react';
 import Snackbar from '@material-ui/core/Snackbar';
 import useHttpErrorHandler from '../../hooks/http-error.handler';
 

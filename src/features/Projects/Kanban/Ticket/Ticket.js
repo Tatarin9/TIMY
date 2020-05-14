@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
 
-import appClasses from '../../../../App.css';
+// import appClasses from '../../../../App.css';
 import classes from './Ticket.css';
-import Button from '../../../../shared/UI/Button/Button';
+// import Button from '../../../../shared/UI/Button/Button';
 import Grid from '@material-ui/core/Grid';
 import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
 import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import ForwardOutlinedIcon from '@material-ui/icons/ForwardOutlined'
-import VisibilityOutlineindexdIcon from '@material-ui/icons/VisibilityOutlined';
+// import VisibilityOutlineindexdIcon from '@material-ui/icons/VisibilityOutlined';
 import { withRouter } from 'react-router';
 
 const kanbanTicket = React.memo((props) => {

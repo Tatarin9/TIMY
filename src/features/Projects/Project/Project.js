@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import axios from '../../../axios';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+import useHttp from '../../../shared/hooks/http';
+import { useStore } from '../../../shared/hooks-store/store';
 
 import classes from './Project.css';
 import withErrorHandler from '../../../shared/hoc/withErrorHandler/withErrorHandler';
 import { setFormControl, formControlChangeHandler } from '../../../shared/FormHelpers';
 import Input from '../../../shared/UI/Input/Input';
 import Button from '../../../shared/UI/Button/Button';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import * as projectActions from './_store/project-actions';
-import { useDispatch, useSelector } from 'react-redux';
 
 const project = props => {
-
     const [projectForm, setProjectForm] = useState({
         controls: [
             setFormControl('projectNameId', 'projectName', 'input', 'text', 'Project name', '', {required: true}, false, false),
@@ -21,26 +21,37 @@ const project = props => {
         valid: true
     });
 
-    const dispatch = useDispatch();
-    const getProjectRequest = () => dispatch(projectActions.getProjectRequestAction());
-    const getProjectSuccess = (project) => dispatch(projectActions.getProjectSuccessAction(project));
-    const getProjectFailure = (error) => dispatch(projectActions.getProjectFailureAction(error));
+    const [state, dispatch] = useStore();
+    const project = useHttp();
 
-    const isProjectLoading = useSelector(state => state.currentProject.isProjectLoading);
+    // listen current project
+    useEffect(() => {
+        if (!project.isLoading && !project.error && project.data) {
+            dispatch('FETCH_CURRENT_PROJECT_SUCCESS', project.data.data);
+            patchFormValues(project.data.data);
+        }
+        if (project.error) {
+            dispatch('FETCH_CURRENT_PROJECT_FAILURE', project.error);
+            alert('show error:' + project.error ? project.error.data.error.message : 'Server error occured');
+        }
+    }, [project.data, project.isLoading, project.error]);
 
-    // send request only on first render (pass [] in useEffect arguments)
+    const fetchCurrentProject = useCallback((projectId) => {
+        dispatch('FETCH_CURRENT_PROJECT_REQUEST');
+        project.sendRequest(
+            `/demo/projects/${projectId}.json`,
+            'get',
+            null,
+            null,
+            null
+        );
+    }, [dispatch, project.sendRequest]);
+
+    // fetch projects
     useEffect(() => {
         if (props.match.params.id) {
             const projectId = props.match.params.id;
-            getProjectRequest();
-            axios.get(`/demo/projects/${projectId}.json`)
-                .then(response => {
-                    getProjectSuccess(response.data);
-                    patchFormValues(response.data);
-                })
-                .catch(error => {
-                    getProjectFailure(error);
-                });
+            fetchCurrentProject(projectId);
         }
     }, []);
 
@@ -75,7 +86,7 @@ const project = props => {
             formData[control.name] = control.value;
         })
 
-        const project = {
+        const projectToSubmit = {
             ...formData,
             status: 'completed',
             phases: [
@@ -87,13 +98,17 @@ const project = props => {
                 {name: 'transition', estimatedHours: 20},
                 {name: 'support', estimatedHours: 20},
             ],
+            actualHours: 10,
+            budgetHours: 30,
+            issuedHours: 5,
             currentPhase: 'planning'
         }
 
         const projectId = props.match.params.id;
         const crudAction = projectId ? 'put' : 'post';
         const endpointUrl = projectId ? `/demo/projects/${projectId}.json` : '/demo/projects.json';
-        axios[crudAction](endpointUrl, project)
+
+        axios[crudAction](endpointUrl, projectToSubmit)
             .then(response => {
                 props.history.push('/projects');
             })
@@ -118,12 +133,12 @@ const project = props => {
                 clicked={submitProjectHandler}>ORDER</Button>
     </form>)
 
-    if (isProjectLoading) {
+    if (state.isProjectLoading) {
         form = <CircularProgress/>;
     }
 
-    let project = null;
-    project = (
+    let projectJsx = null;
+    projectJsx = (
         <div className={classes.Project}>
             <h4>Project Edit</h4>
             <p>Project id is {props.match.params.id}</p>
@@ -133,7 +148,7 @@ const project = props => {
 
     return (
         <React.Fragment>
-            {project}
+            {projectJsx}
         </React.Fragment>
     )
 }

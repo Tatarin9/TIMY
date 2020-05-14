@@ -1,9 +1,10 @@
 import React from 'react';
 
-import classes from './NavMenu.css';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
+
+import classes from './NavMenu.css';
 
 const navMenu = (props) => (
     <header className={classes.NavMenu}>

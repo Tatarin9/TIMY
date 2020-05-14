@@ -10,7 +10,7 @@ export const useStore = (shouldListen = true) => {
 
     const dispatch = (actionId, payload) => {
         // action by id is a function that updates the state
-      const newState = actions[actionId](globalState, payload);
+      const newState = actions[actionId](payload);
       globalState = {...globalState, ...newState};
 
       for (const listener of listeners) {
