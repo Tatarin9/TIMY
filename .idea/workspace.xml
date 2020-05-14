@@ -2,25 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cc650fb-a41b-4b27-a6df-8cb1e7e0749b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/features/Auth/Auth.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Auth/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Auth/Logout/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Auth/Logout/Logout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/NavMenu/NavMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/NavMenu/NavMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/SideDrawer/SideDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/SideDrawer/SideDrawer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Projects/Kanban/Column/Column.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Column/Column.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Projects/Kanban/Kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Kanban.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Projects/Kanban/Ticket/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Ticket/Ticket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Projects/Project/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Project/Project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Projects/Project/_store/project-actions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Projects/Project/_store/project-reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/hoc/withErrorHandler/withErrorHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/hoc/withErrorHandler/withErrorHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/hooks-store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/hooks-store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/_store/projects-store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/FormHelpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/FormHelpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/UI/Input/Input.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/Input/Input.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/UI/Input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/Input/Input.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +131,7 @@
       <workItem from="1588752032847" duration="599000" />
       <workItem from="1588790010877" duration="29000" />
       <workItem from="1588964236800" duration="13899000" />
-      <workItem from="1589382050536" duration="23969000" />
+      <workItem from="1589382050536" duration="28745000" />
     </task>
     <task id="LOCAL-00001" summary="switch to webstorm">
       <created>1585690261567</created>
@@ -334,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589396553260</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="remove react, complete hooks state management">
+      <created>1589471550556</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1589471550556</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,17 +357,18 @@
     <MESSAGE value="code cleaning" />
     <MESSAGE value="add http hook for auth" />
     <MESSAGE value="minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor changes" />
+    <MESSAGE value="remove react, complete hooks state management" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove react, complete hooks state management" />
   </component>
   <component name="WindowStateProjectService">
     <state x="689" y="341" width="688" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587229103946">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="689" y="341" width="688" height="396" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587229103946" />
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1589396553179">
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1589471550442">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589396553179" />
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589471550442" />
     <state x="247" y="162" width="1407" height="728" key="DiffContextDialog" timestamp="1589467982943">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -390,18 +386,18 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="174" key="SettingsEditor/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588349301498" />
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589396554473">
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589471551930">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589396554473" />
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589471551930" />
     <state x="764" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587142952545">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="764" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587142952545" />
-    <state x="762" y="247" width="1050" height="590" key="find.popup" timestamp="1589452121382">
+    <state x="762" y="247" width="1050" height="590" key="find.popup" timestamp="1589479129592">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="762" y="247" width="1050" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589452121382" />
+    <state x="762" y="247" width="1050" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589479129592" />
     <state x="653" y="332" width="670" height="413" key="git4idea.merge.GitPullDialog" timestamp="1586692091469">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

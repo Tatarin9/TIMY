@@ -9,14 +9,16 @@ import { formControlChangeHandler, getFormControlValueById, setFormControl } fro
 import Input from '../../shared/UI/Input/Input';
 import Button from '../../shared/UI/Button/Button';
 
+import classes from './Auth.css';
+
 const auth = props => {
     const [loginForm, setLoginForm] = useState({
         controls: [
-            setFormControl('email', 'email', 'input', 'text', 'Email', '', {
+            setFormControl('email', 'email', 'Email', 'input', 'text', 'Email', '', {
                 required: true,
                 isEmail: true
             }, false, false),
-            setFormControl('password', 'password', 'input', 'text', 'Password', '', {
+            setFormControl('password', 'password', 'Password', 'input', 'text', 'Password', '', {
                 required: true,
                 minLength: 6
             }, false, false),
@@ -90,13 +92,14 @@ const auth = props => {
     }, []);
 
     let loginFormJsx = (
-        <form onSubmit={submitAuthHandler}>
+        <form onSubmit={submitAuthHandler} className={classes.AuthForm}>
             {loginForm.controls.map(formControl => (
                 <Input
                     key={formControl.id}
                     elementType={formControl.elementType}
                     elementConfig={formControl.elementConfig}
                     value={formControl.value}
+                    label={formControl.label}
                     invalid={!formControl.valid}
                     shouldValidate={formControl.validation}
                     touched={formControl.touched}

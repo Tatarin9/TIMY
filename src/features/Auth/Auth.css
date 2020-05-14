@@ -1,0 +1,23 @@
+.AuthForm {
+    padding: 1rem;
+    display: grid;
+    grid-auto-rows: 2rem;
+    grid-row-gap: 0.5rem;
+}
+@media (min-width: 40rem) {
+    .AuthForm {
+        margin: auto;
+        width: 30rem;
+        grid-template-columns: 10rem auto;
+        grid-row-gap: 1rem;
+        grid-column-gap: 0.5rem;
+    }
+
+    /*.AuthForm [id="title"] {*/
+    /*    grid-column: span 2;*/
+    /*}*/
+
+    /*.AuthFormCheckbox {*/
+    /*    grid-column: span 2;*/
+    /*}*/
+}

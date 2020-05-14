@@ -1,7 +1,8 @@
-export function setFormControl(id, name, elementType, configType, placeholder, value, validation, valid, touched) {
+export function setFormControl(id, name, label, elementType, configType, placeholder, value, validation, valid, touched) {
     const control = {
         id: id,
         name: name,
+        label: label,
         elementType: elementType,
         elementConfig: {
             type: configType,

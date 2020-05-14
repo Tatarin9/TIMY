@@ -48,10 +48,10 @@ const input = ( props ) => {
     }
 
     return (
-        <div className={classes.Input}>
+        <React.Fragment>
             <label className={classes.Label}>{props.label}</label>
             {inputElement}
-        </div>
+        </React.Fragment>
     );
 
 };

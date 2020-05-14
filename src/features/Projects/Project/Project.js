@@ -14,9 +14,9 @@ import Button from '../../../shared/UI/Button/Button';
 const project = props => {
     const [projectForm, setProjectForm] = useState({
         controls: [
-            setFormControl('projectNameId', 'projectName', 'input', 'text', 'Project name', '', {required: true}, false, false),
-            setFormControl('projectCustomerId', 'customer', 'input', 'text', 'Customer name', '', {required: true}, false, false),
-            setFormControl('projectCustomerIdId', 'customerId', 'input', 'text', 'Customer id', '', {required: true}, false, false),
+            setFormControl('projectNameId', 'projectName', 'Project name', 'input', 'text', 'Project name', '', {required: true}, false, false),
+            setFormControl('projectCustomerId', 'customer', 'Customer name', 'input', 'text', 'Customer name', '', {required: true}, false, false),
+            setFormControl('projectCustomerIdId', 'customerId', 'Customer ID', 'input', 'text', 'Customer id', '', {required: true}, false, false),
         ],
         valid: true
     });
