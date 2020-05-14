@@ -92,7 +92,7 @@ const layout = props => {
                     open={isSideDrawerVisible}
                     isAuthenticated={!!state.authData}
                     closed={sideDrawerClosedHandler}/>
-                <main className={classes.Content}>
+                <main className={classes.MainContent}>
                     {props.children}
                     <Suspense fallback={<div>Loading...</div>}>{routes}</Suspense>
                 </main>

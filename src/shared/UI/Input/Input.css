@@ -1,7 +1,8 @@
 .Label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 8px;
+    align-self: center;
+    /*font-weight: bold;*/
+    /*display: block;*/
+    /*margin-bottom: 8px;*/
 }
 
 .InputElement {

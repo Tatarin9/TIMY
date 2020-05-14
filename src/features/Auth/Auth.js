@@ -10,6 +10,7 @@ import Input from '../../shared/UI/Input/Input';
 import Button from '../../shared/UI/Button/Button';
 
 import classes from './Auth.css';
+import appClasses from '../../App.css';
 
 const auth = props => {
     const [loginForm, setLoginForm] = useState({
@@ -92,22 +93,24 @@ const auth = props => {
     }, []);
 
     let loginFormJsx = (
-        <form onSubmit={submitAuthHandler} className={classes.AuthForm}>
-            {loginForm.controls.map(formControl => (
-                <Input
-                    key={formControl.id}
-                    elementType={formControl.elementType}
-                    elementConfig={formControl.elementConfig}
-                    value={formControl.value}
-                    label={formControl.label}
-                    invalid={!formControl.valid}
-                    shouldValidate={formControl.validation}
-                    touched={formControl.touched}
-                    changed={(event) => inputChangedHandler(event, formControl.id)}/>
-            ))}
-            <Button btnType="Success" disabled={!loginForm.valid}
-                    clicked={submitAuthHandler}>{isSignup ? 'Sign up' : 'Sign in'}</Button>
-        </form>
+            <form onSubmit={submitAuthHandler} className={classes.AuthForm}>
+                {loginForm.controls.map(formControl => (
+                    <Input
+                        key={formControl.id}
+                        elementType={formControl.elementType}
+                        elementConfig={formControl.elementConfig}
+                        value={formControl.value}
+                        label={formControl.label}
+                        invalid={!formControl.valid}
+                        shouldValidate={formControl.validation}
+                        touched={formControl.touched}
+                        changed={(event) => inputChangedHandler(event, formControl.id)}/>
+                ))}
+                <div className={classes.FormButtons}>
+                    <Button btnType="Primary" disabled={!loginForm.valid}
+                            clicked={submitAuthHandler}>{isSignup ? 'Sign up' : 'Sign in'}</Button>
+                </div>
+            </form>
     );
     if (state.isAuthLoading) {
         loginFormJsx = <CircularProgress/>;

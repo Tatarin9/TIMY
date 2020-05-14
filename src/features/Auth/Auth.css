@@ -4,12 +4,16 @@
     grid-auto-rows: 2rem;
     grid-row-gap: 0.5rem;
 }
+.FormButtons {
+    grid-column: span 2;
+    margin: auto;
+}
 @media (min-width: 40rem) {
     .AuthForm {
         margin: auto;
         width: 30rem;
         grid-template-columns: 10rem auto;
-        grid-row-gap: 1rem;
+        grid-row-gap: 1.5rem;
         grid-column-gap: 0.5rem;
     }
 

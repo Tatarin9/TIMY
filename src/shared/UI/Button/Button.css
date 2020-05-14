@@ -1,18 +1,40 @@
+
 .Button {
-    background-color: transparent;
-    border: none;
+    background: #408dec;
     color: white;
-    outline: none;
-    cursor: pointer;
     font: inherit;
-    padding: 10px;
-    margin: 10px;
+    border: 1.5px solid #1f7ccb;
+    padding: 0.5rem;
+    border-radius: 8px;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.Button:first-of-type {
-    margin-left: 0;
-    padding-left: 0;
+.Button:hover,
+.Button:active {
+    background: white;
+    color: #2f91db;
+}
+
+.Button:focus {
+    outline: none;
+}
+
+.Button[disabled] {
+    cursor: not-allowed;
+    border: #a1a1a1;
+    background: #ccc;
+    color: #a1a1a1;
+}
+
+/*.Button:first-of-type {*/
+/*    margin-left: 0;*/
+/*    padding-left: 0;*/
+/*}*/
+
+.Primary {
+    color: #ffffff;
 }
 
 .Success {

@@ -1,5 +1,6 @@
-.Content {
+.MainContent {
     margin-top: 72px;
+    min-height: calc(90vh - 70px);
 }
 
 .Page {
