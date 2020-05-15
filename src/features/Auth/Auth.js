@@ -93,6 +93,7 @@ const auth = props => {
     }, []);
 
     let loginFormJsx = (
+        <div className={classes.AuthFormCard}>
             <form onSubmit={submitAuthHandler} className={classes.AuthForm}>
                 {loginForm.controls.map(formControl => (
                     <Input
@@ -108,10 +109,13 @@ const auth = props => {
                 ))}
                 <div className={classes.FormButtons}>
                     <Button btnType="Primary" disabled={!loginForm.valid}
+                            btnWidth="100%"
                             clicked={submitAuthHandler}>{isSignup ? 'Sign up' : 'Sign in'}</Button>
                 </div>
             </form>
+        </div>
     );
+
     if (state.isAuthLoading) {
         loginFormJsx = <CircularProgress/>;
     }
@@ -121,9 +125,28 @@ const auth = props => {
         authRedirect = <Redirect to="/"/>
     }
 
+    const timy = <div>Timy - Time based project management</div>;
+    let formTitle = null;
+    if (isSignup) {
+        formTitle = (
+            <div className={appClasses.TextCenter}>
+                {timy}
+                <p>Please sign in</p>
+            </div>
+        )
+    } else {
+        formTitle = (
+            <div className={appClasses.TextCenter}>
+                {timy}
+                <p>Please sign in</p>
+            </div>
+        )
+    }
+
     return (
         <React.Fragment>
             {authRedirect}
+            {formTitle}
             {loginFormJsx}
         </React.Fragment>
     )

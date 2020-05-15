@@ -2,28 +2,38 @@
   text-align: center;
 }
 
-.App-logo {
+.AppLogo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
 
-.flex {
+.Flex {
   display: flex;
 }
 
-.spaceBetween {
+.SpaceBetween {
   justify-content: space-between;
 }
 
-.flexStart {
+.FlexStart {
   justify-content: flex-start;
 }
 
-.marginRightSmall {
+.MarginRightSmall {
   margin-right: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.TextCenter {
+  text-align: center;
 }
+
+.CardWithShadow {
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+.CardWithBorders {
+  border: 0.5px solid #ccc;
+}
+/*@keyframes App-logo-spin {*/
+/*  from { transform: rotate(0deg); }*/
+/*  to { transform: rotate(360deg); }*/
+/*}*/

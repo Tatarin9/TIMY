@@ -3,12 +3,13 @@
     background: #408dec;
     color: white;
     font: inherit;
-    border: 1.5px solid #1f7ccb;
+    border: 1.5px solid #288fe7;
     padding: 0.5rem;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    box-sizing: border-box;
 }
 
 .Button:hover,

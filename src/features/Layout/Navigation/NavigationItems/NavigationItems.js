@@ -21,13 +21,13 @@ const navigationItems = (props) => {
             </React.Fragment>
 
             : null}
-        {!props.isAuthenticated ?
-            <React.Fragment>
-                <NavigationItem link={{pathname: '/auth/signin'}}
-                                clicked={props.clicked}
-                                exact>Signin</NavigationItem>
-            </React.Fragment>
-            : null}
+        {/*{!props.isAuthenticated ?*/}
+        {/*    <React.Fragment>*/}
+        {/*        <NavigationItem link={{pathname: '/auth/signin'}}*/}
+        {/*                        clicked={props.clicked}*/}
+        {/*                        exact>Signin</NavigationItem>*/}
+        {/*    </React.Fragment>*/}
+        {/*    : null}*/}
     </ul>)
 }
 

@@ -8,8 +8,8 @@ import appClasses from '../../../../App.css';
 const kanbanColumn = (props) => {
 
     const columnTitle = (
-        <div className={[appClasses.flex, appClasses.spaceBetween, classes.TitleWrap].join(' ')}>
-            <div className={[appClasses.flex, appClasses.flexStart].join(' ')}>
+        <div className={[appClasses.Flex, appClasses.SpaceBetween, classes.TitleWrap].join(' ')}>
+            <div className={[appClasses.Flex, appClasses.FlexStart].join(' ')}>
                 <div className={classes.ColumnTag} style={{'background': props.color}}/>
                 <div>{props.title}</div>
             </div>
