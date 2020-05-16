@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Link from '@material-ui/core/Link';
 
 import { useStore } from '../../shared/hooks-store/store';
 import useHttp from '../../shared/hooks/http';
@@ -8,9 +8,14 @@ import useHttp from '../../shared/hooks/http';
 import { formControlChangeHandler, getFormControlValueById, setFormControl } from '../../shared/FormHelpers';
 import Input from '../../shared/UI/Input/Input';
 import Button from '../../shared/UI/Button/Button';
+import LoadSpinner from '../../shared/UI/LoadSpinner/LoadSpinner';
 
 import classes from './Auth.css';
 import appClasses from '../../App.css';
+import timyLogoColored from '../../assets/timy_logo_colored.svg';
+import marketingPic from '../../assets/tmp-pic.png';
+
+
 
 const auth = props => {
     const [loginForm, setLoginForm] = useState({
@@ -112,12 +117,18 @@ const auth = props => {
                             btnWidth="100%"
                             clicked={submitAuthHandler}>{isSignup ? 'Sign up' : 'Sign in'}</Button>
                 </div>
+                <Link href='#'>Forgot password?</Link>
+                <Link href='#' className={appClasses.TextEnd}>Sign up to create account</Link>
             </form>
         </div>
     );
 
     if (state.isAuthLoading) {
-        loginFormJsx = <CircularProgress/>;
+        loginFormJsx = (
+            <div className={appClasses.TextCenter}>
+                <LoadSpinner/>
+            </div>
+        );
     }
 
     let authRedirect = null;
@@ -125,23 +136,17 @@ const auth = props => {
         authRedirect = <Redirect to="/"/>
     }
 
-    const timy = <div>Timy - Time based project management</div>;
+    const logo = <img src={timyLogoColored} alt="Timy"/>
+    const pic = <div><img src={marketingPic} alt="Timy"/></div>
+    const timy = <h2>Timy - Time based project management</h2>;
     let formTitle = null;
-    if (isSignup) {
-        formTitle = (
-            <div className={appClasses.TextCenter}>
-                {timy}
-                <p>Please sign in</p>
-            </div>
-        )
-    } else {
-        formTitle = (
-            <div className={appClasses.TextCenter}>
-                {timy}
-                <p>Please sign in</p>
-            </div>
-        )
-    }
+    formTitle = (
+        <div className={appClasses.TextCenter}>
+            {logo}
+            {pic}
+            {timy}
+        </div>
+    )
 
     return (
         <React.Fragment>

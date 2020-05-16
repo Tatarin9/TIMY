@@ -117,13 +117,15 @@ const project = props => {
             });
     }
 
-    let form = (<form onSubmit={submitProjectHandler}>
-        {projectForm.controls.map(formControl => (
+    let form = (
+        <form className={classes.ProjectForm} onSubmit={submitProjectHandler}>
+            {projectForm.controls.map(formControl => (
             <Input
                 key={formControl.id}
                 elementType={formControl.elementType}
                 elementConfig={formControl.elementConfig}
                 value={formControl.value}
+                label={formControl.label}
                 invalid={!formControl.valid}
                 shouldValidate={formControl.validation}
                 touched={formControl.touched}

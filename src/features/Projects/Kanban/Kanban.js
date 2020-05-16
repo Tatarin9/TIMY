@@ -6,7 +6,7 @@ import { useStore } from '../../../shared/hooks-store/store';
 import KanbanColumn from './Column/Column';
 import LoadSpinner from '../../../shared/UI/LoadSpinner/LoadSpinner';
 
-// import appClasses from '../../App.css';
+import appClasses from '../../../App.css';
 import classes from './Kanban.css';
 
 const kanban = props => {
@@ -102,7 +102,7 @@ const kanban = props => {
     );
 
     const spinner = (
-        <div className={classes.SpinnerWrapper}>
+        <div className={appClasses.TextCenter}>
             <LoadSpinner/>
         </div>
     );

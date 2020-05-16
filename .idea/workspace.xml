@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cc650fb-a41b-4b27-a6df-8cb1e7e0749b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/tmp-pic.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Auth/Auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Auth/Auth.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Auth/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Navigation/NavigationItems/NavigationItems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Projects/Kanban/Column/Column.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Column/Column.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/UI/Button/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/Button/Button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/UI/Button/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/Button/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/UI/Input/Input.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/Input/Input.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Projects/Kanban/Kanban.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Kanban.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Projects/Kanban/Kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Kanban.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Projects/Project/Project.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Project/Project.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Projects/Project/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Project/Project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +48,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -59,10 +60,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/shared/UI/Spinner" />
       <recent name="$PROJECT_DIR$/src/features/Kanban" />
       <recent name="$PROJECT_DIR$/src/shared/UI" />
-      <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/features/Layout" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -133,7 +134,7 @@
       <workItem from="1588752032847" duration="599000" />
       <workItem from="1588790010877" duration="29000" />
       <workItem from="1588964236800" duration="13899000" />
-      <workItem from="1589382050536" duration="40917000" />
+      <workItem from="1589382050536" duration="48063000" />
     </task>
     <task id="LOCAL-00001" summary="switch to webstorm">
       <created>1585690261567</created>
@@ -345,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589498575428</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="login form styling start">
+      <created>1589576219261</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1589576219261</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,17 +384,18 @@
     <MESSAGE value="remove react, complete hooks state management" />
     <MESSAGE value="start working on forms grid css" />
     <MESSAGE value="cont. working on forms grid css" />
-    <option name="LAST_COMMIT_MESSAGE" value="cont. working on forms grid css" />
+    <MESSAGE value="login form styling start" />
+    <option name="LAST_COMMIT_MESSAGE" value="login form styling start" />
   </component>
   <component name="WindowStateProjectService">
     <state x="689" y="341" width="688" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587229103946">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="689" y="341" width="688" height="396" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587229103946" />
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1589498575364">
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1589576219181">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589498575364" />
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589576219181" />
     <state x="247" y="162" width="1407" height="728" key="DiffContextDialog" timestamp="1589467982943">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -404,18 +413,18 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="174" key="SettingsEditor/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588349301498" />
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589498577303">
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589576220620">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589498577303" />
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589576220620" />
     <state x="764" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587142952545">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="764" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587142952545" />
-    <state x="762" y="247" width="1050" height="590" key="find.popup" timestamp="1589573059066">
+    <state x="762" y="247" width="1050" height="590" key="find.popup" timestamp="1589617056250">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="762" y="247" width="1050" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589573059066" />
+    <state x="762" y="247" width="1050" height="590" key="find.popup/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589617056250" />
     <state x="653" y="332" width="670" height="413" key="git4idea.merge.GitPullDialog" timestamp="1586692091469">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

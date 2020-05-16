@@ -1,11 +1,32 @@
-.Project {
-    margin: 20px auto;
-    width: 80%;
-    text-align: center;
+
+.ProjectForm {
+    width: fit-content;
+    padding: 2rem;
+    display: grid;
+    grid-auto-rows: 2rem;
+    grid-row-gap: 1rem;
+}
+@media (min-width: 40rem) {
+    .ProjectForm {
+        margin: auto;
+        /*width: 30rem;*/
+        grid-template-columns: auto auto auto auto;
+        grid-row-gap: 1rem;
+        grid-column-gap: 0.5rem;
+    }
+
+    /*.AuthForm [id="title"] {*/
+    /*    grid-column: span 2;*/
+    /*}*/
+
+    /*.AuthFormCheckbox {*/
+    /*    grid-column: span 2;*/
+    /*}*/
 }
 
-@media (min-width: 600px) {
-    .Project {
-        width: 500px;
-    }
-}
+
+/*@media (min-width: 600px) {*/
+/*    .Project {*/
+/*        width: 500px;*/
+/*    }*/
+/*}*/
