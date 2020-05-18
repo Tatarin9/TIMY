@@ -24,7 +24,7 @@ const auth = props => {
                 required: true,
                 isEmail: true
             }, false, false),
-            setFormControl('password', 'password', 'Password', 'input', 'text', 'Password', '', {
+            setFormControl('password', 'password', 'Password', 'input', 'password', 'Password', '', {
                 required: true,
                 minLength: 6
             }, false, false),
