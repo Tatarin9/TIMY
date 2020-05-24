@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cc650fb-a41b-4b27-a6df-8cb1e7e0749b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/features/Layout/Footer/Footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/Layout/Footer/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Auth/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/UI/Input/Input.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/UI/Input/Input.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Layout/Layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Layout/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Projects/Kanban/Column/Column.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Column/Column.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Projects/Kanban/Kanban.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Projects/Kanban/Kanban.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +46,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -128,7 +133,8 @@
       <workItem from="1588790010877" duration="29000" />
       <workItem from="1588964236800" duration="13899000" />
       <workItem from="1589382050536" duration="49887000" />
-      <workItem from="1589715715012" duration="2194000" />
+      <workItem from="1589715715012" duration="3608000" />
+      <workItem from="1590296395012" duration="4812000" />
     </task>
     <task id="LOCAL-00001" summary="switch to webstorm">
       <created>1585690261567</created>
@@ -354,14 +360,20 @@
       <option name="project" value="LOCAL" />
       <updated>1589621626415</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="minor css stuff">
+      <created>1589834578652</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1589834578652</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add modal, some styles" />
     <MESSAGE value="logic to show clicked ticket details in modal" />
     <MESSAGE value="add interceptors, http with axios" />
     <MESSAGE value="add firebase without auth for now" />
@@ -386,26 +398,27 @@
     <MESSAGE value="cont. working on forms grid css" />
     <MESSAGE value="login form styling start" />
     <MESSAGE value="finish login, start project form" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish login, start project form" />
+    <MESSAGE value="minor css stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor css stuff" />
   </component>
   <component name="WindowStateProjectService">
     <state x="689" y="341" width="688" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587229103946">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="689" y="341" width="688" height="396" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587229103946" />
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1589621626293">
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2" timestamp="1589834578587">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589621626293" />
+    <state x="558" y="113" width="912" height="851" key="CommitChangelistDialog2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589834578587" />
     <state x="247" y="162" width="1407" height="728" key="DiffContextDialog" timestamp="1589467982943">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="2106" y="138" width="1457" height="746" key="DiffContextDialog/1920.0.1920.1080/67.27.1853.1053@1920.0.1920.1080" timestamp="1585690133648" />
     <state x="247" y="162" width="1407" height="728" key="DiffContextDialog/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589467982943" />
-    <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1589035700087">
+    <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1589956046905">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589035700087" />
+    <state x="776" y="297" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589956046905" />
     <state x="832" y="232" width="312" height="614" key="RollbackChangesDialog" timestamp="1588526211512">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -414,14 +427,14 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="174" key="SettingsEditor/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1588349301498" />
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589621627864">
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589834579916">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589621627864" />
-    <state x="764" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587142952545">
+    <state x="588" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1589834579916" />
+    <state x="764" y="454" width="448" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590345890002">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="764" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1587142952545" />
+    <state x="764" y="454" width="448" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1590345890002" />
     <state x="762" y="247" width="1050" height="590" key="find.popup" timestamp="1589617056250">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

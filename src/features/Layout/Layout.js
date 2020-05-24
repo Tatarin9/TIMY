@@ -12,6 +12,7 @@ import Auth from '../Auth/Auth';
 import Logout from '../Auth/Logout/Logout';
 
 import classes from './Layout.css';
+import Footer from './Footer/Footer';
 
 // import Project from '../Project/Project';
 const Project = React.lazy(() => import('../Projects/Project/Project'));
@@ -96,6 +97,7 @@ const layout = props => {
                     {props.children}
                     <Suspense fallback={<div>Loading...</div>}>{routes}</Suspense>
                 </main>
+                <Footer/>
             </div>
         </React.Fragment>
     )

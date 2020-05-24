@@ -1,15 +1,8 @@
 .MainContent {
     margin-top: 72px;
-    min-height: calc(90vh - 70px);
+    /*min-height: calc(90vh - 70px);*/
 }
 
 .Page {
-    width: 70%;
     margin: 0 auto;
-}
-
-@media (max-width: 499px) {
-    .Page {
-        width: 90%;
-    }
 }
