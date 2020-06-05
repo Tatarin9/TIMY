@@ -47,7 +47,7 @@ const project = props => {
         );
     }, [dispatch, project.sendRequest]);
 
-    // fetch projects
+    // fetch projects once component mounts
     useEffect(() => {
         if (props.match.params.id) {
             const projectId = props.match.params.id;

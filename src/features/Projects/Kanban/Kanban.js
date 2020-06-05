@@ -94,12 +94,29 @@ const kanban = props => {
 
     let filters = null;
 
+    const setTheme = () => {
+        const bodyElement = document.getElementsByTagName('body')[0];
+        const htmlElement = document.getElementsByTagName('html')[0];
+        const theme = htmlElement.getAttribute('data-theme');
+        bodyElement.classList.add('color-theme-in-transition');
+        if (!theme) {
+            htmlElement.setAttribute('data-theme',  'dark');
+        } else {
+            htmlElement.setAttribute('data-theme', theme === 'light' ? 'dark' : 'light');
+        }
+        // TODO clear timeout
+        window.setTimeout(() => {
+            bodyElement.classList.remove('color-theme-in-transition');
+        }, 2000);
+    }
+
     filters = (
         <div className={classes.Filters}>
             <div>Filters</div>
-            {/*<button onClick={this.search}>Add Project</button>*/}
+            <button onClick={setTheme}>Change theme</button>
         </div>
     );
+
 
     const spinner = (
         <div className={appClasses.TextCenter}>
