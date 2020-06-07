@@ -59,7 +59,7 @@ const kanbanTicket = React.memo((props) => {
                         <Grid item>
                             <Tooltip title="Move left">
                                 <IconButton aria-label="move" style={{'padding': '5px'}}  disabled={props.columnNumber === 1}>
-                                    <ForwardOutlinedIcon fontSize="small" style={{'fontSize': '1.1rem', transform: 'rotate(180deg)'}}/>
+                                    <ForwardOutlinedIcon fontSize="small" className={classes.TicketIcon} style={{'fontSize': '1.1rem', transform: 'rotate(180deg)'}}/>
                                 </IconButton>
                             </Tooltip>
                         </Grid>

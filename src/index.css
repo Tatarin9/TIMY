@@ -9,6 +9,7 @@ html {
 html[data-theme='dark'] {
     --background: #2e3132;
     --text-color-normal: #f6f7f8;
+    --test-color: red;
 }
 html[data-theme='light'] {
     --background: #fcfdff;

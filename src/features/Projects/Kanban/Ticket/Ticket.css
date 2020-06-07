@@ -2,7 +2,8 @@
     box-sizing: border-box;
     width: 90%;
     height: 13rem;
-    box-shadow: 0px 2px 7px slategrey;
+    /*box-shadow: 0px 2px 7px slategrey;*/
+    border: 0.5px solid #ccc;
     margin: 15px auto;
     font-size: small;
 }
@@ -14,6 +15,10 @@
     line-height: 2rem;
     background: #ccc;
     padding: 0 5px;
+}
+
+.TicketIcon {
+    fill: var(--test-color);
 }
 
 .ProjectDetailsWrapper {
@@ -50,7 +55,6 @@
     display: grid;
     grid-gap: 0.1rem 0.5rem;
     grid-template-columns: 1fr 3fr;
-    background-color: #eee;
     padding: 0.3rem;
     min-height: 4rem;
 }
@@ -60,7 +64,7 @@
     align-self: center;
 }
 .GridItemBarWrapper {
-    background-color: rgba(255, 255, 255, 0.8);
+    /*background-color: rgba(255, 255, 255, 0.8);*/
     border: 1px solid #ccc;
     box-sizing: border-box;
     padding: 0.1rem;
