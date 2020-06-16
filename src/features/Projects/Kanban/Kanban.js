@@ -97,13 +97,14 @@ const kanban = props => {
     const setTheme = () => {
         const bodyElement = document.getElementsByTagName('body')[0];
         const htmlElement = document.getElementsByTagName('html')[0];
-        const theme = htmlElement.getAttribute('data-theme');
+        let theme = htmlElement.getAttribute('data-theme');
         bodyElement.classList.add('color-theme-in-transition');
         if (!theme) {
-            htmlElement.setAttribute('data-theme',  'dark');
-        } else {
-            htmlElement.setAttribute('data-theme', theme === 'light' ? 'dark' : 'light');
-        }
+            theme = 'dark';
+         }
+        htmlElement.setAttribute('data-theme', theme === 'light' ? 'dark' : 'light');
+        localStorage.setItem('theme', theme);
+
         // TODO clear timeout
         window.setTimeout(() => {
             bodyElement.classList.remove('color-theme-in-transition');

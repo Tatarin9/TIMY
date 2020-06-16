@@ -39,19 +39,19 @@ const kanbanTicket = React.memo((props) => {
                         <div className={classes.GridItemText}>Budget</div>
                         <div className={classes.GridItemBarWrapper}>
                             <div className={classes.GridItemBar}
-                                 style={{'width': budgetPercent, 'background': '#eaa41f'}}>{props.project.budgetHours}</div>
+                                 style={{'width': budgetPercent, 'background': '#9ca3b7'}}>{props.project.budgetHours}</div>
                         </div>
 
                         <div className={classes.GridItemText}>Actual</div>
                         <div className={classes.GridItemBarWrapper}>
                             <div className={classes.GridItemBar}
-                                 style={{'width': actualPercent, 'background': '#93c47d'}}>{props.project.actualHours}</div>
+                                 style={{'width': actualPercent, 'background': '#9ca3b7'}}>{props.project.actualHours}</div>
                         </div>
 
                         <div className={classes.GridItemText}>Issued</div>
                         <div className={classes.GridItemBarWrapper}>
                             <div className={classes.GridItemBar}
-                                 style={{'width': issuedPercent, 'background': '#6fa8dc'}}>{props.project.issuedHours}</div>
+                                 style={{'width': issuedPercent, 'background': '#9ca3b7'}}>{props.project.issuedHours}</div>
                         </div>
                     </div>
 

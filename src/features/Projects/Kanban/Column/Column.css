@@ -3,7 +3,7 @@
     /*flex-basis: 0;*/
     /*min-height: calc(90vh - 70px);*/
     min-width: 11rem;
-    border: solid 1px #ccc;
+    border: solid 1px var(--card-border-color);
     margin-bottom: 1rem;
 }
 
@@ -13,7 +13,7 @@
 
 .TitleWrap {
     box-sizing: border-box;
-    border-bottom: solid 1px #ccc;
+    border-bottom: solid 1px var(--card-border-color);
     height: 2rem;
     line-height: 2rem;
 }

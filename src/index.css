@@ -8,11 +8,17 @@ html {
 
 html[data-theme='dark'] {
     --background: #2e3132;
+    --card-background: #434656;
+    --card-border-color: #474f69;
+    --card-header-color: #596179;
     --text-color-normal: #f6f7f8;
     --test-color: red;
 }
 html[data-theme='light'] {
     --background: #fcfdff;
+    --card-background: none;
+    --card-border-color: #ccc;
+    --card-header-color: #ccc;
     --text-color-normal: #393a3b;
 }
 
