@@ -1,11 +1,11 @@
 .Footer {
-    height: 30px;
-    width: 100%;
-    margin-top: 2rem;
+    height: 50px;
+    /*width: 100%;*/
+    /*margin-top: 2rem;*/
     /*position: absolute;*/
     /*bottom: 0;*/
     /*left: 0;*/
-    background-color: #27303b;
+    background-color: #434656;
     color: white;
     display: flex;
     justify-content: space-between;

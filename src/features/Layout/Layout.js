@@ -34,6 +34,15 @@ const layout = props => {
                 logoutAfterTime((expirationDate.getTime() - new Date().getTime()) / 1000);
             }
         }
+
+        const htmlElement = document.getElementsByTagName('html')[0];
+        let theme = htmlElement.getAttribute('data-theme');
+        if (!theme) {
+            theme = 'dark';
+        }
+        htmlElement.setAttribute('data-theme', theme === 'light' ? 'dark' : 'light');
+        localStorage.setItem('theme', theme);
+
     }, []);
 
     const logoutAfterTime = (expirationTime) => {
